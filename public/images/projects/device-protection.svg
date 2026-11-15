@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#091823"/>
+      <stop offset="100%" stop-color="#040e15"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" rx="8" fill="url(#bg)"/>
+  <rect x="1" y="1" width="798" height="448" rx="7" fill="none" stroke="#58d1be" stroke-opacity="0.25"/>
+
+  <!-- Top bar -->
+  <rect x="30" y="25" width="740" height="35" rx="5" fill="#132735" fill-opacity="0.6"/>
+  <circle cx="50" cy="42" r="5" fill="#efa75c" fill-opacity="0.8"/>
+  <circle cx="68" cy="42" r="5" fill="#58d1be" fill-opacity="0.8"/>
+  <circle cx="86" cy="42" r="5" fill="#aebfc0" fill-opacity="0.5"/>
+  <text x="110" y="47" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto" font-size="12" fill="#aebfc0">j2ee-device-protection-project.onrender.com — Java 17 Servlet MVC &amp; Docker</text>
+
+  <!-- MVC Architecture Diagram -->
+  <g transform="translate(60, 90)">
+    <!-- Controller -->
+    <rect x="0" y="20" width="180" height="110" rx="6" fill="#142c3d" stroke="#58d1be" stroke-width="2"/>
+    <text x="20" y="45" font-family="sans-serif" font-size="13" fill="#58d1be" font-weight="bold">Front Controller</text>
+    <text x="20" y="65" font-family="sans-serif" font-size="10" fill="#ffffff">Jakarta Servlets</text>
+    <text x="20" y="82" font-family="sans-serif" font-size="9" fill="#aebfc0">AuthFilter (RBAC)</text>
+    <text x="20" y="98" font-family="sans-serif" font-size="9" fill="#efa75c">Admin vs Customer Roles</text>
+
+    <!-- Connectors -->
+    <line x1="180" y1="75" x2="250" y2="75" stroke="#58d1be" stroke-width="2"/>
+    <polygon points="250,75 240,70 240,80" fill="#58d1be"/>
+
+    <!-- DAO & Service -->
+    <rect x="250" y="20" width="190" height="110" rx="6" fill="#142c3d" stroke="#58d1be" stroke-width="2"/>
+    <text x="20" y="45" font-family="sans-serif" font-size="13" fill="#58d1be" font-weight="bold" transform="translate(250,0)">DAO Persistence</text>
+    <text x="20" y="65" font-family="sans-serif" font-size="10" fill="#ffffff" transform="translate(250,0)">JDBC PreparedStatement</text>
+    <text x="20" y="82" font-family="sans-serif" font-size="9" fill="#aebfc0" transform="translate(250,0)">Zero SQL Injection</text>
+    <text x="20" y="98" font-family="sans-serif" font-size="9" fill="#efa75c" transform="translate(250,0)">HikariCP Connection Pool</text>
+
+    <!-- Connectors to DB -->
+    <line x1="440" y1="75" x2="510" y2="75" stroke="#58d1be" stroke-width="2"/>
+    <polygon points="510,75 500,70 500,80" fill="#58d1be"/>
+
+    <!-- MySQL Database -->
+    <rect x="510" y="20" width="170" height="110" rx="6" fill="#142c3d" stroke="#efa75c" stroke-width="2"/>
+    <text x="20" y="45" font-family="sans-serif" font-size="13" fill="#efa75c" font-weight="bold" transform="translate(510,0)">MySQL 8.0</text>
+    <text x="20" y="65" font-family="sans-serif" font-size="10" fill="#ffffff" transform="translate(510,0)">Relational Schema</text>
+    <text x="20" y="82" font-family="sans-serif" font-size="9" fill="#aebfc0" transform="translate(510,0)">Claims, Warranties, Devices</text>
+    <text x="20" y="98" font-family="sans-serif" font-size="9" fill="#58d1be" transform="translate(510,0)">ACID Multi-Table Joins</text>
+  </g>
+
+  <!-- Lower Panel: Docker & Deployment -->
+  <g transform="translate(60, 240)">
+    <rect width="680" height="145" rx="6" fill="#102330" stroke="#aebfc0" stroke-opacity="0.3"/>
+    <text x="25" y="32" font-family="sans-serif" font-size="14" fill="#ffffff" font-weight="bold">Multi-Stage Docker &amp; Cloud Deployment (Render)</text>
+    <text x="25" y="52" font-family="sans-serif" font-size="11" fill="#58d1be">Eclipse Temurin JDK 17 Builder ➡️ Apache Tomcat 10.1 Alpine Minimal Image (~180MB)</text>
+
+    <!-- Badges inside -->
+    <rect x="25" y="70" width="140" height="40" rx="4" fill="#173549"/>
+    <text x="35" y="94" font-family="sans-serif" font-size="10" fill="#ffffff" font-weight="600">Zero Memory Leaks</text>
+
+    <rect x="180" y="70" width="145" height="40" rx="4" fill="#173549"/>
+    <text x="190" y="94" font-family="sans-serif" font-size="10" fill="#58d1be" font-weight="600">JSP / JSTL Server Views</text>
+
+    <rect x="340" y="70" width="145" height="40" rx="4" fill="#173549"/>
+    <text x="350" y="94" font-family="sans-serif" font-size="10" fill="#efa75c" font-weight="600">Role-Based Access Guard</text>
+
+    <rect x="500" y="70" width="155" height="40" rx="4" fill="#173549"/>
+    <text x="510" y="94" font-family="sans-serif" font-size="10" fill="#aebfc0" font-weight="600">100% Reproducible Deploy</text>
+  </g>
+</svg>

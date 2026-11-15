@@ -50,6 +50,14 @@ export default function SoftwareProjectsPage() {
                 </a>
               </h3>
               <p className="stack">React 19 · TypeScript · Node.js · Express.js · Supabase Auth · Web Workers · PDF-Lib · WCAG 2.1 AA</p>
+              <div className="project-preview-frame">
+                <img
+                  src="/images/projects/labelcropper.svg"
+                  alt="LabelCropper Interface Preview"
+                  className="project-preview-img"
+                  loading="lazy"
+                />
+              </div>
               <div className="project-links">
                 <a className="live" href="https://lablecropper.com/" target="_blank" rel="noopener noreferrer">
                   Open running app →
@@ -91,6 +99,14 @@ export default function SoftwareProjectsPage() {
                 </a>
               </h3>
               <p className="stack">TypeScript · HTML5 · CSS3 · GitHub REST API · GitHub Actions CI/CD · Edge CDN</p>
+              <div className="project-preview-frame">
+                <img
+                  src="/images/projects/revkit.svg"
+                  alt="RevKit Directory Interface Preview"
+                  className="project-preview-img"
+                  loading="lazy"
+                />
+              </div>
               <div className="project-links">
                 <a className="live" href="https://revkit.online/" target="_blank" rel="noopener noreferrer">
                   Open running app →
@@ -132,6 +148,14 @@ export default function SoftwareProjectsPage() {
                 </a>
               </h3>
               <p className="stack">Java 17 · J2EE Servlets · JSP/JSTL · JDBC · MySQL · Apache Tomcat · Docker · Render · Maven</p>
+              <div className="project-preview-frame">
+                <img
+                  src="/images/projects/device-protection.svg"
+                  alt="Device Protection Portal Architecture Preview"
+                  className="project-preview-img"
+                  loading="lazy"
+                />
+              </div>
               <div className="project-links">
                 <a className="live" href="https://j2ee-device-protection-project.onrender.com" target="_blank" rel="noopener noreferrer">
                   Open running app →

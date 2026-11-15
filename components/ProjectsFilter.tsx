@@ -4,7 +4,7 @@ import React, { useState, useEffect, useTransition } from 'react';
 import { CATEGORIES, PROJECTS, CategoryId, Project } from '@/lib/projectsData';
 
 export function ProjectsFilter() {
-  const [activeCategory, setActiveCategory] = useState<CategoryId>('all');
+  const [activeCategory, setActiveCategory] = useState<CategoryId>('live-apps');
   const [, startTransition] = useTransition();
 
   useEffect(() => {
@@ -119,6 +119,17 @@ export function ProjectsFilter() {
             </div>
 
             <div className="project-card-body">
+              {project.previewImage && (
+                <div className="project-preview-frame">
+                  <img
+                    src={project.previewImage}
+                    alt={`${project.title} preview`}
+                    loading="lazy"
+                    className="project-preview-img"
+                  />
+                </div>
+              )}
+
               {project.description.map((paragraph, idx) => (
                 <p key={idx}>{paragraph}</p>
               ))}

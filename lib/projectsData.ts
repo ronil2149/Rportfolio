@@ -8,14 +8,15 @@ export interface Project {
   keyMetric?: string;
   liveUrl?: string;
   githubUrl?: string;
+  previewImage?: string;
 }
 
 export const CATEGORIES = [
-  { id: 'all', label: 'All Projects', anchor: 'work' },
   { id: 'live-apps', label: 'Production Live Apps', anchor: 'live-apps' },
   { id: 'experience', label: 'Work Experience', anchor: 'experience' },
   { id: 'humber', label: 'Humber College', anchor: 'humber' },
   { id: 'btech', label: 'B.Tech Engineering', anchor: 'btech' },
+  { id: 'all', label: 'All Projects', anchor: 'work' },
 ] as const;
 
 export type CategoryId = (typeof CATEGORIES)[number]['id'];
@@ -36,6 +37,7 @@ export const PROJECTS: Project[] = [
     keyMetric: '50,000+ monthly visits · 40% latency reduction · $0 server compute bills',
     liveUrl: 'https://lablecropper.com/',
     githubUrl: 'https://github.com/PrayxisTechnologies/LABLECROPPER',
+    previewImage: '/images/projects/labelcropper.svg',
   },
   {
     id: 'revkit',
@@ -51,6 +53,7 @@ export const PROJECTS: Project[] = [
     keyMetric: '1,023+ indexed security utilities · 100% automated CI sync · 100/100 Core Web Vitals',
     liveUrl: 'https://revkit.online/',
     githubUrl: 'https://github.com/ronil2149',
+    previewImage: '/images/projects/revkit.svg',
   },
   {
     id: 'videlto',
@@ -66,6 +69,7 @@ export const PROJECTS: Project[] = [
     keyMetric: 'Sub-10s automated video ad generation · Sub-150ms global TTFB via Cloudflare',
     liveUrl: 'https://videlto.online/',
     githubUrl: 'https://github.com/ronil2149',
+    previewImage: '/images/projects/videlto.svg',
   },
 
   // --- WORK EXPERIENCE ---
@@ -141,6 +145,7 @@ export const PROJECTS: Project[] = [
     keyMetric: 'Full Servlet MVC + DAO architecture · Zero SQL injection · Multi-stage Docker deployment',
     liveUrl: 'https://j2ee-device-protection-project.onrender.com',
     githubUrl: 'https://github.com/ronil2149/j2ee-device-protection-project',
+    previewImage: '/images/projects/device-protection.svg',
   },
   {
     id: 'renthub',

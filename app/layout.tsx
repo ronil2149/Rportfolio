@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { SceneLoader } from '@/components/SceneLoader';
+import { Navbar } from '@/components/Navbar';
 import './globals.css';
 
 const DESCRIPTION =
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a className="skip" href="#work">Skip to projects</a>
         <SceneLoader />
         <div className="scrim" aria-hidden="true" />
+        <Navbar />
         {children}
       </body>
     </html>

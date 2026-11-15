@@ -1,17 +1,79 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 import { ProjectsFilter } from './ProjectsFilter';
 
 export function Content() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText('ronilghoghari2149@gmail.com');
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2200);
+    } catch {
+      // Fallback
+      window.location.href = 'mailto:ronilghoghari2149@gmail.com';
+    }
+  };
+
   return (
     <main>
       <section id="hero">
+        <div className="hero-status-pill">
+          <span className="hero-status-dot" aria-hidden="true" />
+          <span>Available Immediately · Toronto · Open Work Permit (PGWP — No Sponsorship Needed)</span>
+        </div>
+
         <h1 className="drop">
           <span>Ronil</span>
           <em>Ghoghari</em>
         </h1>
+
         <p className="hero-note">
-          Full-stack developer in Toronto. I build web applications and track down why they break — from an unexpected render glitch in React down to the database record that caused it. Five years shipping code across TypeScript, React, Next.js, Node.js, Java, and SQL.
+          Full-stack developer in Toronto with 3+ years of experience building and supporting web applications — from diagnosing browser-side rendering glitches in React down to tracing REST endpoints and SQL database records. Shipped production systems across TypeScript, React, Next.js, Node.js, Java, and SQL.
         </p>
+
+        <div className="hero-actions">
+          <a
+            href="/Ronil_dev.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero-btn hero-btn--primary"
+          >
+            <span>View / Download Resume (PDF)</span>
+            <span className="hero-btn-arrow">↗</span>
+          </a>
+          <a href="#contact" className="hero-btn hero-btn--secondary">
+            <span>Hire / Contact Me</span>
+            <span className="hero-btn-arrow">↓</span>
+          </a>
+          <button
+            type="button"
+            onClick={handleCopyEmail}
+            className={`hero-btn hero-btn--copy ${copied ? 'hero-btn--copied' : ''}`}
+            aria-label="Copy email address to clipboard"
+          >
+            {copied ? (
+              <>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Email Copied!</span>
+              </>
+            ) : (
+              <>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy Email</span>
+              </>
+            )}
+          </button>
+        </div>
+
         <ul className="hero-meta">
           <li>
             <span className="badge">Work Permit</span>
@@ -53,6 +115,7 @@ export function Content() {
             .
           </li>
         </ul>
+
         <div className="hero-contact">
           <a href="mailto:ronilghoghari2149@gmail.com">ronilghoghari2149@gmail.com</a>
           <a href="tel:+14378307427">+1 (437) 830-7427</a>
@@ -84,7 +147,7 @@ export function Content() {
         {/* Interactive Filterable Projects Grid */}
         <ProjectsFilter />
 
-        {/* Specialized Hub Links for backward compatibility */}
+        {/* Specialized Hub Links */}
         <div className="project-hubs" style={{ marginTop: '3.5rem' }}>
           <Link className="project-hub" href="/projects/software">
             <div className="project-hub-number">01</div>
@@ -110,6 +173,106 @@ export function Content() {
               </div>
             </div>
           </Link>
+        </div>
+      </section>
+
+      {/* Scannable Work Experience Snapshot for Recruiters */}
+      <section id="experience-snapshot" className="experience-snapshot-section">
+        <div className="section-header-split">
+          <div>
+            <h2>Work Experience Snapshot</h2>
+            <p className="lede">
+              Commercial track record troubleshooting customer-facing applications, shipping production features, and integrating full-stack APIs.
+            </p>
+          </div>
+          <a href="#experience" className="section-cta-link">
+            Filter all code &amp; repo proof below ↓
+          </a>
+        </div>
+
+        <div className="experience-timeline">
+          {/* Ambrosia Natural Foods */}
+          <article className="experience-item">
+            <div className="experience-item-header">
+              <div>
+                <span className="experience-company-badge">Toronto, ON</span>
+                <h3 className="experience-role">Web &amp; Frontend Support Developer</h3>
+                <h4 className="experience-company">Ambrosia Natural Foods</h4>
+              </div>
+              <span className="experience-period">May 2025 – Jun 2026</span>
+            </div>
+            <ul className="experience-bullets">
+              <li>
+                Troubleshot live production issues on the customer-facing website, diagnosing JavaScript runtime exceptions, DOM rendering anomalies, CSS layout failures, and browser-side defects using Chrome DevTools.
+              </li>
+              <li>
+                Diagnosed full-stack data-sync issues by tracing browser network requests, validating REST API endpoints in Postman, and querying relational database records with SQL.
+              </li>
+              <li>
+                Maintained internal technical troubleshooting documentation and standard operating procedures that reduced repeat escalations and enabled staff to resolve known issues independently.
+              </li>
+            </ul>
+          </article>
+
+          {/* Uplers */}
+          <article className="experience-item">
+            <div className="experience-item-header">
+              <div>
+                <span className="experience-company-badge">Remote</span>
+                <h3 className="experience-role">Web &amp; Email Developer</h3>
+                <h4 className="experience-company">Uplers</h4>
+              </div>
+              <span className="experience-period">Feb 2022 – Jun 2023</span>
+            </div>
+            <ul className="experience-bullets">
+              <li>
+                Engineered responsive landing pages and reusable UI components from Figma design specs using JavaScript, HTML5, CSS3, and Bootstrap, including robust client-side form validation.
+              </li>
+              <li>
+                Developed and tested HTML email templates across major email clients (Outlook, Apple Mail, Gmail) and viewports, eliminating cross-client rendering inconsistencies.
+              </li>
+            </ul>
+          </article>
+
+          {/* SForce Services */}
+          <article className="experience-item">
+            <div className="experience-item-header">
+              <div>
+                <span className="experience-company-badge">Surat, India</span>
+                <h3 className="experience-role">Full-Stack Developer</h3>
+                <h4 className="experience-company">SForce Services</h4>
+              </div>
+              <span className="experience-period">Jul 2021 – Jan 2022</span>
+            </div>
+            <ul className="experience-bullets">
+              <li>
+                Developed recruitment portals and candidate onboarding workflows using JavaScript, Bootstrap, REST APIs, client-side validation, and database synchronization.
+              </li>
+              <li>
+                Streamlined pipeline-status tracking and candidate application lifecycles for internal HR and recruitment operations.
+              </li>
+            </ul>
+          </article>
+
+          {/* K.M. Soft */}
+          <article className="experience-item">
+            <div className="experience-item-header">
+              <div>
+                <span className="experience-company-badge">Gujarat, India</span>
+                <h3 className="experience-role">Full-Stack Developer</h3>
+                <h4 className="experience-company">K.M. Soft</h4>
+              </div>
+              <span className="experience-period">Jan 2021 – Jun 2021</span>
+            </div>
+            <ul className="experience-bullets">
+              <li>
+                Built reusable Angular UI components integrated with Node.js and Express services.
+              </li>
+              <li>
+                Developed REST APIs connecting application workflows to MongoDB, ensuring dependable data persistence and query performance.
+              </li>
+            </ul>
+          </article>
         </div>
       </section>
 
@@ -159,20 +322,49 @@ export function Content() {
         <p className="lede">
           I am actively interviewing for Full-Stack, Frontend, and Software Developer roles in Toronto, ON.
         </p>
-        <div className="contact-status" style={{ marginBottom: '1.5rem' }}>
-          <span className="badge">Work Authorization</span>
-          <b>Open Work Permit (PGWP)</b> — eligible to work full-time across Canada with no employer sponsorship required.
+
+        {/* Fixed Spacing & Clear Label */}
+        <div className="contact-status">
+          <span className="contact-status-label">Work Authorization:</span>
+          <b className="contact-status-value">Open Work Permit (PGWP)</b>
+          <span className="contact-status-desc">— eligible to work full-time across Canada with no employer sponsorship required.</span>
         </div>
-        <div>
+
+        <div className="contact-primary-row">
           <a className="big" href="mailto:ronilghoghari2149@gmail.com">
             ronilghoghari2149@gmail.com
           </a>
-          <div className="contact-phone">
-            <a href="tel:+14378307427">+1 (437) 830-7427</a>
-            <span>•</span>
-            <span>Toronto, ON</span>
-          </div>
+          <button
+            type="button"
+            onClick={handleCopyEmail}
+            className={`contact-copy-btn ${copied ? 'contact-copy-btn--copied' : ''}`}
+            aria-label="Copy email address"
+          >
+            {copied ? (
+              <>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Copied!</span>
+              </>
+            ) : (
+              <>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy Email</span>
+              </>
+            )}
+          </button>
         </div>
+
+        <div className="contact-phone">
+          <a href="tel:+14378307427">+1 (437) 830-7427</a>
+          <span>•</span>
+          <span>Toronto, ON</span>
+        </div>
+
         <ul className="links">
           <li>
             <a href="https://github.com/ronil2149" target="_blank" rel="noopener noreferrer">
@@ -186,7 +378,7 @@ export function Content() {
           </li>
           <li>
             <a href="/Ronil_dev.pdf" target="_blank" rel="noopener noreferrer">
-              Resume ↗
+              Resume (PDF) ↗
             </a>
           </li>
           <li>
