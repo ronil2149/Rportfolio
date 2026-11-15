@@ -21,11 +21,6 @@ export function Content() {
   return (
     <main>
       <section id="hero">
-        <div className="hero-status-pill">
-          <span className="hero-status-dot" aria-hidden="true" />
-          <span>Available Immediately · Toronto · Open Work Permit (PGWP — No Sponsorship Needed)</span>
-        </div>
-
         <h1 className="drop">
           <span>Ronil</span>
           <em>Ghoghari</em>
@@ -42,11 +37,11 @@ export function Content() {
             rel="noopener noreferrer"
             className="hero-btn hero-btn--primary"
           >
-            <span>View / Download Resume (PDF)</span>
+            <span>View Resume</span>
             <span className="hero-btn-arrow">↗</span>
           </a>
           <a href="#contact" className="hero-btn hero-btn--secondary">
-            <span>Hire / Contact Me</span>
+            <span>Hire Me</span>
             <span className="hero-btn-arrow">↓</span>
           </a>
           <button

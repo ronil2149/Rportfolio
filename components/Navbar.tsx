@@ -52,7 +52,7 @@ export function Navbar() {
             Resume ↗
           </a>
           <a href="/#contact" className="navbar__cta">
-            Hire / Contact
+            Hire Me
           </a>
         </nav>
 
