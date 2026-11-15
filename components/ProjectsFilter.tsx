@@ -119,16 +119,18 @@ export function ProjectsFilter() {
             </div>
 
             <div className="project-card-body">
-              {project.description.map((paragraph, idx) => (
-                <p key={idx}>{paragraph}</p>
-              ))}
+              <p className="project-summary">{project.summary}</p>
 
-              {project.keyMetric && (
-                <div className="project-key-metric">
-                  <span className="metric-dot" aria-hidden="true" />
-                  <span>{project.keyMetric}</span>
-                </div>
-              )}
+              <ul className="project-highlights">
+                {project.highlights.map((bullet, idx) => (
+                  <li key={idx}>{bullet}</li>
+                ))}
+              </ul>
+
+              <div className="project-key-metric">
+                <span className="metric-icon">⚡</span>
+                <span className="metric-text">{project.keyMetric}</span>
+              </div>
             </div>
           </article>
         ))}
