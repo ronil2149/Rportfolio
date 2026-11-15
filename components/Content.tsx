@@ -183,7 +183,7 @@ export function Content() {
             </p>
           </div>
           <a href="#experience" className="section-cta-link">
-            Filter all code &amp; repo proof below ↓
+            Filter all code &amp; repo proof above ↑
           </a>
         </div>
 

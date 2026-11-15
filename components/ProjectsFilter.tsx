@@ -112,7 +112,7 @@ export function ProjectsFilter() {
                 )}
                 {project.githubUrl && (
                   <a className="code-link" href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                    GitHub repository ↗
+                    {project.githubLabel || (project.githubUrl.endsWith('/ronil2149') ? 'GitHub profile ↗' : 'GitHub repository ↗')}
                   </a>
                 )}
               </div>

@@ -8,6 +8,7 @@ export interface Project {
   highlights: string[];
   liveUrl?: string;
   githubUrl?: string;
+  githubLabel?: string;
 }
 
 export const CATEGORIES = [
@@ -36,6 +37,7 @@ export const PROJECTS: Project[] = [
     ],
     liveUrl: 'https://lablecropper.com/',
     githubUrl: 'https://github.com/PrayxisTechnologies/LABLECROPPER',
+    githubLabel: 'GitHub repository ↗',
   },
   {
     id: 'revkit',
@@ -51,6 +53,7 @@ export const PROJECTS: Project[] = [
     ],
     liveUrl: 'https://revkit.online/',
     githubUrl: 'https://github.com/ronil2149',
+    githubLabel: 'GitHub profile ↗',
   },
   {
     id: 'videlto',
@@ -66,6 +69,7 @@ export const PROJECTS: Project[] = [
     ],
     liveUrl: 'https://videlto.online/',
     githubUrl: 'https://github.com/ronil2149',
+    githubLabel: 'GitHub profile ↗',
   },
 
   // --- WORK EXPERIENCE ---
