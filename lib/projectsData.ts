@@ -84,8 +84,6 @@ export const PROJECTS: Project[] = [
       'Traced data mismatches across browser network requests, Postman API calls, and SQL database queries.',
       'Wrote internal troubleshooting runbooks that cut repeat escalations by 35% and brought the site into Ontario AODA compliance.',
     ],
-    liveUrl: 'https://www.ambrosia.ca/',
-    liveLabel: 'Storefront (ambrosia.ca) ↗',
   },
   {
     id: 'uplers',
