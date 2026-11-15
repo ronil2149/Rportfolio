@@ -104,22 +104,24 @@ export function ProjectsFilter() {
               </h3>
               <p className="stack">{project.stack.join(' · ')}</p>
 
-              <div className="project-links">
-                {project.liveUrl && (
-                  <a className="live" href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                    Open running app →
-                  </a>
-                )}
-                {project.githubLabel && !project.githubUrl ? (
-                  <span className="code-link code-link--private">
-                    {project.githubLabel}
-                  </span>
-                ) : project.githubUrl ? (
-                  <a className="code-link" href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                    {project.githubLabel || (project.githubUrl.endsWith('/ronil2149') ? 'GitHub profile ↗' : 'GitHub repository ↗')}
-                  </a>
-                ) : null}
-              </div>
+              {(project.liveUrl || project.githubUrl || project.githubLabel) && (
+                <div className="project-links">
+                  {project.liveUrl && (
+                    <a className="live" href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                      {project.liveLabel || 'Open running app →'}
+                    </a>
+                  )}
+                  {project.githubLabel && !project.githubUrl ? (
+                    <span className="code-link code-link--private">
+                      {project.githubLabel}
+                    </span>
+                  ) : project.githubUrl ? (
+                    <a className="code-link" href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                      {project.githubLabel || (project.githubUrl.endsWith('/ronil2149') ? 'GitHub profile ↗' : 'GitHub repository ↗')}
+                    </a>
+                  ) : null}
+                </div>
+              )}
             </div>
 
             <div className="project-card-body">

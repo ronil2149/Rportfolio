@@ -7,6 +7,7 @@ export interface Project {
   summary: string;
   highlights: string[];
   liveUrl?: string;
+  liveLabel?: string;
   githubUrl?: string;
   githubLabel?: string;
 }
@@ -83,7 +84,8 @@ export const PROJECTS: Project[] = [
       'Traced data mismatches across browser network requests, Postman API calls, and SQL database queries.',
       'Wrote internal troubleshooting runbooks that cut repeat escalations by 35% and brought the site into Ontario AODA compliance.',
     ],
-    liveUrl: 'https://ronilportfolio.vercel.app/',
+    liveUrl: 'https://www.ambrosia.ca/',
+    liveLabel: 'Storefront (ambrosia.ca) ↗',
   },
   {
     id: 'uplers',
@@ -97,7 +99,6 @@ export const PROJECTS: Project[] = [
       'Tested across 30+ email clients and viewport sizes, fixing Outlook rendering bugs to achieve 99.8% cross-client consistency.',
       'Created reusable template patterns that reduced production turnaround times by 25%.',
     ],
-    liveUrl: 'https://ronilportfolio.vercel.app/',
   },
   {
     id: 'sforceservices',
@@ -125,7 +126,6 @@ export const PROJECTS: Project[] = [
       'Developed Node.js and Express REST APIs connecting business workflows to MongoDB.',
       'Added compound database indexes and optimized queries, speeding up common data lookups by 30%.',
     ],
-    liveUrl: 'https://ronilportfolio.vercel.app/',
   },
 
   // --- EDUCATION: HUMBER COLLEGE ---
@@ -272,9 +272,8 @@ export const PROJECTS: Project[] = [
     highlights: [
       'Integrated external movie database REST APIs with server-side caching for fast page delivery.',
       'Built genre filtering, search, and dynamic layout templates using Handlebars (HBS).',
-      'Deployed on Vercel with responsive mobile and desktop layouts.',
+      'Deployed with responsive mobile and desktop layouts and modular template architecture.',
     ],
-    liveUrl: 'https://movie-webapp-seven.vercel.app',
     githubUrl: 'https://github.com/ronil2149/movie_webapp',
   },
   {
