@@ -5,96 +5,67 @@ export function Content() {
   return (
     <main>
       <section id="hero">
-        <div className="hero-layout">
-          <div className="hero-main">
-            <h1 className="drop">
-              <span>Ronil</span>
-              <em>Ghoghari</em>
-            </h1>
-            <p className="hero-note">
-              Full-stack developer in Toronto. I build web applications and track down why they break — from an unexpected render glitch in React down to the database record that caused it. Five years shipping code across TypeScript, React, Next.js, Node.js, Java, and SQL.
-            </p>
-            <ul className="hero-meta">
-              <li>
-                <span className="badge">Work Permit</span>
-                <b>Open Work Permit (PGWP)</b> — eligible to work full-time in Canada, no visa sponsorship needed.
-              </li>
-              <li>
-                <span className="badge">Current / Recent</span>
-                Web &amp; Frontend Support Developer at{' '}
-                <a className="badge-link" href="#experience" title="View Work Experience proof">
-                  <b>Ambrosia Natural Foods</b>
-                </a>{' '}
-                (Toronto, ON).
-              </li>
-              <li>
-                <span className="badge">Live Production Apps</span>
-                Shipped{' '}
-                <a className="badge-link" href="#live-apps" title="View LabelCropper">
-                  <b>LabelCropper</b>
-                </a>{' '}
-                (50K+ monthly visits),{' '}
-                <a className="badge-link" href="#live-apps" title="View RevKit">
-                  <b>RevKit</b>
-                </a>{' '}
-                (1,023+ indexed tools), and{' '}
-                <a className="badge-link" href="#live-apps" title="View Videlto">
-                  <b>Videlto</b>
-                </a>{' '}
-                (Commercial Ad Studio).
-              </li>
-              <li>
-                <span className="badge">Education</span>
-                <a className="badge-link" href="#humber" title="View Humber College IT Solutions projects">
-                  Postgraduate in IT Solutions (Humber College, Toronto)
-                </a>{' '}
-                •{' '}
-                <a className="badge-link" href="#btech" title="View B.Tech Computer Engineering projects">
-                  B.Tech in Computer Engineering (Uka Tarsadia University)
-                </a>
-                .
-              </li>
-            </ul>
-            <div className="hero-contact">
-              <a href="mailto:ronilghoghari2149@gmail.com">ronilghoghari2149@gmail.com</a>
-              <a href="tel:+14378307427">+1 (437) 830-7427</a>
-              <a href="https://github.com/ronil2149" target="_blank" rel="noopener noreferrer">
-                GitHub ↗
-              </a>
-              <a href="https://www.linkedin.com/in/ronil-ghoghari" target="_blank" rel="noopener noreferrer">
-                LinkedIn ↗
-              </a>
-              <a href="/Ronil_dev.pdf" target="_blank" rel="noopener noreferrer">
-                Resume (PDF) ↗
-              </a>
-            </div>
-          </div>
-
-          <div className="hero-showcase-panel">
-            <div className="showcase-card">
-              <div className="showcase-glow" />
-              <img
-                src="/ronil-showcase.png"
-                alt="Ronil Ghoghari — Full-Stack Developer Holographic Showcase"
-                className="showcase-hologram"
-                width={480}
-                height={480}
-                loading="eager"
-              />
-              <div className="showcase-status-badge">
-                <div className="status-indicator">
-                  <span className="status-ping" />
-                  <span className="status-core" />
-                </div>
-                <div className="status-text">
-                  <strong>Open Work Permit (PGWP)</strong>
-                  <span>Full-Stack Software Developer • Toronto, ON</span>
-                </div>
-              </div>
-            </div>
-          </div>
+        <h1 className="drop">
+          <span>Ronil</span>
+          <em>Ghoghari</em>
+        </h1>
+        <p className="hero-note">
+          Full-stack developer in Toronto. I build web applications and track down why they break — from an unexpected render glitch in React down to the database record that caused it. Five years shipping code across TypeScript, React, Next.js, Node.js, Java, and SQL.
+        </p>
+        <ul className="hero-meta">
+          <li>
+            <span className="badge">Work Permit</span>
+            <b>Open Work Permit (PGWP)</b> — eligible to work full-time in Canada, no visa sponsorship needed.
+          </li>
+          <li>
+            <span className="badge">Current / Recent</span>
+            Web &amp; Frontend Support Developer at{' '}
+            <a className="badge-link" href="#experience" title="View Work Experience proof">
+              <b>Ambrosia Natural Foods</b>
+            </a>{' '}
+            (Toronto, ON).
+          </li>
+          <li>
+            <span className="badge">Live Production Apps</span>
+            Shipped{' '}
+            <a className="badge-link" href="#live-apps" title="View LabelCropper">
+              <b>LabelCropper</b>
+            </a>{' '}
+            (50K+ monthly visits),{' '}
+            <a className="badge-link" href="#live-apps" title="View RevKit">
+              <b>RevKit</b>
+            </a>{' '}
+            (1,023+ indexed tools), and{' '}
+            <a className="badge-link" href="#live-apps" title="View Videlto">
+              <b>Videlto</b>
+            </a>{' '}
+            (Commercial Ad Studio).
+          </li>
+          <li>
+            <span className="badge">Education</span>
+            <a className="badge-link" href="#humber" title="View Humber College IT Solutions projects">
+              Postgraduate in IT Solutions (Humber College, Toronto)
+            </a>{' '}
+            •{' '}
+            <a className="badge-link" href="#btech" title="View B.Tech Computer Engineering projects">
+              B.Tech in Computer Engineering (Uka Tarsadia University)
+            </a>
+            .
+          </li>
+        </ul>
+        <div className="hero-contact">
+          <a href="mailto:ronilghoghari2149@gmail.com">ronilghoghari2149@gmail.com</a>
+          <a href="tel:+14378307427">+1 (437) 830-7427</a>
+          <a href="https://github.com/ronil2149" target="_blank" rel="noopener noreferrer">
+            GitHub ↗
+          </a>
+          <a href="https://www.linkedin.com/in/ronil-ghoghari" target="_blank" rel="noopener noreferrer">
+            LinkedIn ↗
+          </a>
+          <a href="/Ronil_dev.pdf" target="_blank" rel="noopener noreferrer">
+            Resume (PDF) ↗
+          </a>
         </div>
-
         <p className="cue">scroll — explore verifiable projects below</p>
       </section>
 
