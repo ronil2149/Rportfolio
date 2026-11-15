@@ -140,7 +140,7 @@ export function Content() {
         <ProjectsFilter />
 
         {/* Specialized Hub Links */}
-        <div className="project-hubs" style={{ marginTop: '3.5rem' }}>
+        <div className="project-hubs">
           <Link className="project-hub" href="/projects/software">
             <div className="project-hub-number">01</div>
             <div className="project-hub-content">
