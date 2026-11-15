@@ -119,27 +119,13 @@ export function ProjectsFilter() {
             </div>
 
             <div className="project-card-body">
-              {project.previewImage && (
-                <div className="project-preview-frame">
-                  <img
-                    src={project.previewImage}
-                    alt={`${project.title} preview`}
-                    loading="lazy"
-                    className="project-preview-img"
-                  />
-                </div>
-              )}
+              <p className="project-summary">{project.summary}</p>
 
-              {project.description.map((paragraph, idx) => (
-                <p key={idx}>{paragraph}</p>
-              ))}
-
-              {project.keyMetric && (
-                <div className="project-key-metric">
-                  <span className="metric-dot" aria-hidden="true" />
-                  <span>{project.keyMetric}</span>
-                </div>
-              )}
+              <ul className="project-bullets">
+                {project.highlights.map((highlight, idx) => (
+                  <li key={idx}>{highlight}</li>
+                ))}
+              </ul>
             </div>
           </article>
         ))}

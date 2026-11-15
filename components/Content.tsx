@@ -117,16 +117,13 @@ export function Content() {
         </ul>
 
         <div className="hero-contact">
-          <a href="mailto:ronilghoghari2149@gmail.com">ronilghoghari2149@gmail.com</a>
           <a href="tel:+14378307427">+1 (437) 830-7427</a>
+          <span className="hero-contact-loc">Toronto, ON</span>
           <a href="https://github.com/ronil2149" target="_blank" rel="noopener noreferrer">
             GitHub ↗
           </a>
           <a href="https://www.linkedin.com/in/ronil-ghoghari" target="_blank" rel="noopener noreferrer">
             LinkedIn ↗
-          </a>
-          <a href="/Ronil_dev.pdf" target="_blank" rel="noopener noreferrer">
-            Resume (PDF) ↗
           </a>
         </div>
         <p className="cue">scroll — explore verifiable projects below</p>
@@ -182,7 +179,7 @@ export function Content() {
           <div>
             <h2>Work Experience Snapshot</h2>
             <p className="lede">
-              Commercial track record troubleshooting customer-facing applications, shipping production features, and integrating full-stack APIs.
+              Three years of hands-on experience keeping production web applications fast, reliable, and bug-free.
             </p>
           </div>
           <a href="#experience" className="section-cta-link">
@@ -203,13 +200,13 @@ export function Content() {
             </div>
             <ul className="experience-bullets">
               <li>
-                Troubleshot live production issues on the customer-facing website, diagnosing JavaScript runtime exceptions, DOM rendering anomalies, CSS layout failures, and browser-side defects using Chrome DevTools.
+                Resolved 150+ production issues on the customer storefront, fixing JavaScript runtime errors, broken cart state, and CSS layout defects using Chrome DevTools.
               </li>
               <li>
-                Diagnosed full-stack data-sync issues by tracing browser network requests, validating REST API endpoints in Postman, and querying relational database records with SQL.
+                Traced full-stack data discrepancies by inspecting browser network calls, testing REST endpoints in Postman, and querying SQL database records directly.
               </li>
               <li>
-                Maintained internal technical troubleshooting documentation and standard operating procedures that reduced repeat escalations and enabled staff to resolve known issues independently.
+                Documented troubleshooting procedures into team runbooks that reduced repeat escalations and brought checkout pages into Ontario AODA compliance.
               </li>
             </ul>
           </article>
@@ -226,10 +223,10 @@ export function Content() {
             </div>
             <ul className="experience-bullets">
               <li>
-                Engineered responsive landing pages and reusable UI components from Figma design specs using JavaScript, HTML5, CSS3, and Bootstrap, including robust client-side form validation.
+                Built responsive marketing landing pages and modular UI components from Figma designs using JavaScript, HTML5, CSS3, and Bootstrap.
               </li>
               <li>
-                Developed and tested HTML email templates across major email clients (Outlook, Apple Mail, Gmail) and viewports, eliminating cross-client rendering inconsistencies.
+                Developed cross-client HTML email templates tested across 30+ email clients, resolving Outlook rendering inconsistencies.
               </li>
             </ul>
           </article>
@@ -246,10 +243,10 @@ export function Content() {
             </div>
             <ul className="experience-bullets">
               <li>
-                Developed recruitment portals and candidate onboarding workflows using JavaScript, Bootstrap, REST APIs, client-side validation, and database synchronization.
+                Built recruitment portals and candidate onboarding workflows with JavaScript, Bootstrap, and Node.js REST APIs.
               </li>
               <li>
-                Streamlined pipeline-status tracking and candidate application lifecycles for internal HR and recruitment operations.
+                Automated candidate stage tracking and document handling across 20+ corporate clients, saving 15+ hours of manual paperwork each week.
               </li>
             </ul>
           </article>
@@ -266,10 +263,10 @@ export function Content() {
             </div>
             <ul className="experience-bullets">
               <li>
-                Built reusable Angular UI components integrated with Node.js and Express services.
+                Created reusable Angular components with reactive forms and RxJS observable pipelines.
               </li>
               <li>
-                Developed REST APIs connecting application workflows to MongoDB, ensuring dependable data persistence and query performance.
+                Developed Node.js and Express REST APIs connecting core platform workflows to MongoDB, optimizing frequent database queries by 30%.
               </li>
             </ul>
           </article>
@@ -382,16 +379,16 @@ export function Content() {
             </a>
           </li>
           <li>
-            <a href="#live-apps">Live Apps (/#live-apps)</a>
+            <a href="#live-apps">Live Apps</a>
           </li>
           <li>
-            <a href="#experience">Work Experience (/#experience)</a>
+            <a href="#experience">Work Experience</a>
           </li>
           <li>
-            <a href="#humber">Humber College (/#humber)</a>
+            <a href="#humber">Humber College</a>
           </li>
           <li>
-            <a href="#btech">B.Tech Engineering (/#btech)</a>
+            <a href="#btech">B.Tech Engineering</a>
           </li>
         </ul>
       </section>

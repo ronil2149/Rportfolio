@@ -4,11 +4,10 @@ export interface Project {
   category: 'live-apps' | 'experience' | 'humber' | 'btech';
   badge: string;
   stack: string[];
-  description: string[];
-  keyMetric?: string;
+  summary: string;
+  highlights: string[];
   liveUrl?: string;
   githubUrl?: string;
-  previewImage?: string;
 }
 
 export const CATEGORIES = [
@@ -28,16 +27,15 @@ export const PROJECTS: Project[] = [
     title: 'LabelCropper — High-Volume Shipping Label Processor',
     category: 'live-apps',
     badge: 'Live App · 50K+ Monthly Visits',
-    stack: ['React 19', 'TypeScript', 'Node.js', 'Express', 'Supabase Auth', 'Web Workers', 'PDF-Lib', 'WCAG 2.1 AA'],
-    description: [
-      'A production tool built for e-commerce sellers converting multi-page marketplace orders (Meesho, Flipkart, Amazon) into thermal 4x6 labels, currently processing 50K+ monthly visits. Built as a monorepo with React and an Express backend with Supabase auth.',
-      'The hardest architectural challenge was processing large PDFs without blowing up server costs or violating privacy. Instead of uploading merchant files to cloud servers, I offloaded all coordinate extraction, invoice stripping, and barcode isolation to browser Web Workers using PDF-Lib and Canvas API.',
-      'Customer shipping addresses and GST numbers never touch a server, batch processing time dropped by 40% (under 2 seconds for a 50-page manifest), and server compute costs remain at $0 while keeping Lighthouse scores above 90.',
+    stack: ['React 19', 'TypeScript', 'Node.js', 'Express', 'Supabase Auth', 'Web Workers', 'PDF-Lib'],
+    summary: 'A browser-based shipping label formatter used by 50,000+ monthly e-commerce sellers on Meesho, Flipkart, and Amazon.',
+    highlights: [
+      'Moved all PDF parsing, invoice stripping, and 4x6 label cropping client-side into Web Workers using PDF-Lib.',
+      'Kept customer shipping data and GST details entirely in the browser, eliminating server compute bills and privacy risks.',
+      'Cut batch processing time by 40% (under 2s for 50 pages) while keeping a 90+ Lighthouse score.',
     ],
-    keyMetric: '50,000+ monthly visits · 40% latency reduction · $0 server compute bills',
     liveUrl: 'https://lablecropper.com/',
     githubUrl: 'https://github.com/PrayxisTechnologies/LABLECROPPER',
-    previewImage: '/images/projects/labelcropper.svg',
   },
   {
     id: 'revkit',
@@ -45,31 +43,29 @@ export const PROJECTS: Project[] = [
     category: 'live-apps',
     badge: 'Live Platform · 1,023+ Tools',
     stack: ['TypeScript', 'HTML5', 'Modern CSS', 'GitHub REST API', 'GitHub Actions CI/CD', 'Edge CDN'],
-    description: [
-      'A curated discovery engine and directory indexing 1,023+ reverse-engineering tools, decompilers, debuggers, and binary analysis frameworks across 13 specialized domains (Android RE, .NET, Firmware, Decompilers, Debuggers).',
-      'Most curated lists on GitHub are static markdowns that slowly rot with dead links. I built RevKit on a zero-database Jamstack architecture powered by an automated GitHub Actions CI pipeline that audits stars, release tags, and commit activity on a weekly cron, serializing the catalog into a static, normalized JSON index.',
-      'A custom client-side search engine delivers sub-50ms instant query filtering across 1,000+ utilities with zero database latency, sub-100ms cold loads globally via edge CDN, and a 100/100 Core Web Vitals score.',
+    summary: 'A curated directory indexing 1,023+ reverse-engineering tools, decompilers, and debuggers for security researchers.',
+    highlights: [
+      'Replaced static GitHub awesome-lists with an automated CI pipeline that checks stars, tags, and commits weekly.',
+      'Built a client-side search engine that filters across 13 security categories in under 50ms with zero database round-trips.',
+      'Hosted statically on an edge CDN for sub-100ms cold loads and a perfect 100/100 Core Web Vitals score.',
     ],
-    keyMetric: '1,023+ indexed security utilities · 100% automated CI sync · 100/100 Core Web Vitals',
     liveUrl: 'https://revkit.online/',
     githubUrl: 'https://github.com/ronil2149',
-    previewImage: '/images/projects/revkit.svg',
   },
   {
     id: 'videlto',
     title: 'Videlto — Commercial Video Ad Studio',
     category: 'live-apps',
-    badge: 'Live App · AI Media Engine',
-    stack: ['Next.js (App Router)', 'React', 'TypeScript', 'Tailwind CSS', 'Cloudflare CDN', 'Render', 'REST APIs'],
-    description: [
-      'A commercial video platform that converts static DTC product photography into launch-ready 9:16 vertical video ads for TikTok, Instagram Reels, and YouTube Shorts in under 10 seconds.',
-      'Built with Next.js Server Components and deployed across Render and Cloudflare CDN. The hardest technical hurdle was handling bursty video synthesis without dropping HTTP connections. I decoupled scene deconstruction and ad-hook copywriting from the video rendering pipeline using an asynchronous worker queue, streaming preview states back to the client while caching final MP4s at the edge.',
-      'Delivers sub-150ms TTFB globally with authentic product fidelity across multiple social ad formats.',
+    badge: 'Live App · Video Engine',
+    stack: ['Next.js (App Router)', 'React', 'TypeScript', 'Tailwind CSS', 'Cloudflare CDN', 'Render'],
+    summary: 'A video studio web app that turns static e-commerce product photos into 9:16 vertical video ads for TikTok and Instagram Reels.',
+    highlights: [
+      'Built the full-stack web app with Next.js App Router, React, and an asynchronous rendering pipeline.',
+      'Decoupled video composition from web requests using worker queues so user previews stream without timeout errors.',
+      'Cached rendered assets on Cloudflare CDN to keep global TTFB under 150ms.',
     ],
-    keyMetric: 'Sub-10s automated video ad generation · Sub-150ms global TTFB via Cloudflare',
     liveUrl: 'https://videlto.online/',
     githubUrl: 'https://github.com/ronil2149',
-    previewImage: '/images/projects/videlto.svg',
   },
 
   // --- WORK EXPERIENCE ---
@@ -78,13 +74,13 @@ export const PROJECTS: Project[] = [
     title: 'Ambrosia Natural Foods — E-Commerce Platform Support & Triage',
     category: 'experience',
     badge: 'Experience · Toronto, ON',
-    stack: ['JavaScript (ES6+)', 'TypeScript', 'React', 'HTML5', 'CSS3/SCSS', 'Chrome DevTools', 'Postman', 'SQL (PostgreSQL)', 'WCAG 2.1 AA / AODA'],
-    description: [
-      'Web and frontend support developer for a major Toronto grocery e-commerce storefront. When checkout glitches, cart state bugs, or third-party plugin conflicts happen during peak retail hours, they come straight to my desk.',
-      'My day-to-day is rapid root-cause diagnosis: catching unhandled JavaScript errors in Chrome DevTools Network triage, replaying broken REST payloads in Postman, and querying the database directly with SQL to trace the exact corrupted row or bad catalog sync that caused the failure.',
-      'Resolved 150+ high-priority production defects, authored our 40+ page internal engineering troubleshooting runbook to cut repeat escalations by 35%, and brought our entire checkout UI into compliance with Ontario’s AODA and WCAG 2.1 AA accessibility standards.',
+    stack: ['JavaScript (ES6+)', 'TypeScript', 'React', 'HTML5', 'CSS3', 'Chrome DevTools', 'Postman', 'SQL', 'AODA'],
+    summary: 'Supported customer-facing storefront operations and resolved production defects for a major Toronto grocery retailer.',
+    highlights: [
+      'Fixed 150+ live production issues across checkout flows, cart state, and UI rendering using Chrome DevTools.',
+      'Traced data mismatches across browser network requests, Postman API calls, and SQL database queries.',
+      'Wrote internal troubleshooting runbooks that cut repeat escalations by 35% and brought the site into Ontario AODA compliance.',
     ],
-    keyMetric: '150+ production bugs resolved · 35% escalation reduction · Full Ontario AODA compliance',
     liveUrl: 'https://ronilportfolio.vercel.app/',
   },
   {
@@ -92,13 +88,13 @@ export const PROJECTS: Project[] = [
     title: 'Uplers — Enterprise Web & Cross-Client Campaign Systems',
     category: 'experience',
     badge: 'Experience · Remote',
-    stack: ['JavaScript', 'HTML5', 'CSS3', 'Bootstrap', 'Figma', 'Litmus', 'Email on Acid', 'Git'],
-    description: [
-      'Built responsive marketing landing pages and high-volume email campaign interfaces from Figma designs for global enterprise clients.',
-      'The primary technical challenge was overcoming Outlook’s legacy Word-based rendering engine while maintaining pixel-perfect layouts on modern WebKit browsers. I developed modular, reusable hybrid-fluid table components with defensive CSS fallbacks.',
-      'Delivered 200+ responsive landing pages and templates with a 99.8% cross-client rendering consistency across 30+ email clients and viewport sizes, cutting turnaround time by 25%.',
+    stack: ['JavaScript', 'HTML5', 'CSS3', 'Bootstrap', 'Figma', 'Litmus', 'Git'],
+    summary: 'Developed responsive landing pages and cross-client email campaign interfaces for enterprise agency clients.',
+    highlights: [
+      'Built modular UI components and marketing pages from Figma designs using JavaScript, HTML5, CSS3, and Bootstrap.',
+      'Tested across 30+ email clients and viewport sizes, fixing Outlook rendering bugs to achieve 99.8% cross-client consistency.',
+      'Created reusable template patterns that reduced production turnaround times by 25%.',
     ],
-    keyMetric: '200+ responsive interfaces shipped · 99.8% cross-client visual fidelity',
     liveUrl: 'https://ronilportfolio.vercel.app/',
   },
   {
@@ -107,12 +103,12 @@ export const PROJECTS: Project[] = [
     category: 'experience',
     badge: 'Experience · Surat, India',
     stack: ['JavaScript', 'Bootstrap', 'Node.js', 'Express.js', 'REST APIs', 'MySQL', 'Git'],
-    description: [
-      'Developed a centralized candidate onboarding and tracking platform for a recruitment agency, replacing fragmented email spreadsheets with a structured digital pipeline.',
-      'Designed normalized MySQL database schemas with foreign-key integrity to track candidate states (applied, interviewed, shortlisted, placed) and built Express REST APIs with asynchronous client validation and document verification.',
-      'Automated onboarding for 500+ candidates across 20+ corporate clients, saving more than 15 hours per week of manual administrative paperwork.',
+    summary: 'A candidate onboarding and tracking portal built to replace fragmented spreadsheets for a recruitment agency.',
+    highlights: [
+      'Built an Express and MySQL backend with normalized tables tracking candidate stages from application to placement.',
+      'Created responsive recruiter dashboards with client-side form validation and status-change triggers.',
+      'Automated onboarding for 500+ candidates across 20 corporate clients, saving 15+ hours of weekly manual work.',
     ],
-    keyMetric: '500+ candidate onboardings automated · 15+ hours/week saved',
     githubUrl: 'https://github.com/ronil2149/sforceservices',
   },
   {
@@ -121,12 +117,12 @@ export const PROJECTS: Project[] = [
     category: 'experience',
     badge: 'Experience · Gujarat, India',
     stack: ['Angular', 'TypeScript', 'Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'REST APIs'],
-    description: [
-      'Built reactive single-page application views in Angular integrated with Node.js/Express backend services and MongoDB.',
-      'Engineered reusable component hierarchies with RxJS observable pipelines for asynchronous data streams and dynamic form validation.',
-      'Wrote optimized MongoDB aggregation queries and indexed collections, improving query execution times by 30% for high-frequency operational records.',
+    summary: 'Built single-page application features and backend microservices for an enterprise operations platform.',
+    highlights: [
+      'Created reusable Angular components with reactive forms and RxJS observable streams.',
+      'Developed Node.js and Express REST APIs connecting business workflows to MongoDB.',
+      'Added compound database indexes and optimized queries, speeding up common data lookups by 30%.',
     ],
-    keyMetric: '12+ reactive Angular views · 30% database query speedup',
     liveUrl: 'https://ronilportfolio.vercel.app/',
   },
 
@@ -137,28 +133,27 @@ export const PROJECTS: Project[] = [
     category: 'humber',
     badge: 'Humber College Capstone',
     stack: ['Java 17', 'J2EE Servlets', 'JSP / JSTL', 'JDBC', 'MySQL', 'Docker', 'Apache Tomcat', 'Maven', 'Render'],
-    description: [
-      'An enterprise hardware warranty portal where customers register covered devices and file repair claims, while adjusters and admins audit evidence, approve payouts, and generate liability reports.',
-      'Built with a clean Java Servlet MVC architecture and a DAO persistence layer over JDBC. To handle concurrent claim submissions reliably, I used connection pooling, prepared statements to eliminate SQL injection, and servlet authentication filters for Role-Based Access Control (RBAC).',
-      'Containerized with a multi-stage Docker build on Alpine Linux and deployed on Render with zero memory leaks under concurrent load testing.',
+    summary: 'An enterprise hardware warranty portal where customers register devices and adjusters review repair claims.',
+    highlights: [
+      'Implemented a Java Servlet MVC architecture with a DAO persistence layer over JDBC and MySQL.',
+      'Added connection pooling, prepared statements to block SQL injection, and servlet filters for role-based access control.',
+      'Packaged as a lightweight multi-stage Docker container deployed on Render with zero memory leaks under load.',
     ],
-    keyMetric: 'Full Servlet MVC + DAO architecture · Zero SQL injection · Multi-stage Docker deployment',
     liveUrl: 'https://j2ee-device-protection-project.onrender.com',
     githubUrl: 'https://github.com/ronil2149/j2ee-device-protection-project',
-    previewImage: '/images/projects/device-protection.svg',
   },
   {
     id: 'renthub',
     title: 'RentHub — Peer-to-Peer Rental Marketplace',
     category: 'humber',
-    badge: 'Humber College Project · Team Code Blooded',
+    badge: 'Humber College Project',
     stack: ['TypeScript', 'Next.js 14', 'React', 'Node.js', 'MongoDB', 'Mongoose', 'JWT', 'Tailwind CSS'],
-    description: [
-      'A peer-to-peer equipment rental marketplace for booking tools, cameras, and gear, developed as part of Humber team "Code Blooded".',
-      'The hardest engineering challenge was availability scheduling: preventing race conditions and double-booking when two users attempt to reserve the same item for overlapping dates. I implemented date-range overlap validation at the database query layer combined with atomic MongoDB update operations.',
-      'User authentication is handled via stateless JWTs stored in secure HTTP-only cookies, with role-based routing protecting renter and owner dashboards.',
+    summary: 'A peer-to-peer equipment rental web app for booking cameras, audio gear, and tools without scheduling conflicts.',
+    highlights: [
+      'Engineered date-range overlap validation in MongoDB to prevent double-booking when users reserve the same item.',
+      'Implemented stateless JWT authentication stored in HTTP-only cookies with role-based routing.',
+      'Maintained sub-200ms catalog search and reservation response times during stress tests.',
     ],
-    keyMetric: 'Zero double-booking concurrency bugs · Sub-200ms catalog API response time',
     githubUrl: 'https://github.com/ronil2149/Rent_hub',
   },
   {
@@ -167,12 +162,12 @@ export const PROJECTS: Project[] = [
     category: 'humber',
     badge: 'Humber College Project',
     stack: ['Neo4j', 'Cypher', 'Graph Data Science (GDS)', 'FastRP Embeddings', 'KNN Graph Algorithms'],
-    description: [
-      'A Neo4j knowledge-graph project modeling multi-hop relationships between technical skills, job requirements, companies, and emerging market trends.',
-      'Relational databases struggle with indirect skill connections because multi-table SQL JOINs become slow and rigid at scale. In Neo4j, I modeled a graph schema connecting Jobs, Skills, Locations, and Companies, then ran Graph Data Science (GDS) algorithms—specifically FastRP node embeddings and K-Nearest Neighbors (KNN)—to calculate cosine similarity.',
-      'Delivers personalized job recommendations and skill-gap analysis with sub-second Cypher query traversal.',
+    summary: 'A Neo4j knowledge graph connecting skills, job requirements, and companies to discover hidden career pathways.',
+    highlights: [
+      'Replaced slow multi-table relational SQL JOINs with a native graph schema in Neo4j and Cypher.',
+      'Generated 64-dimensional FastRP node embeddings and used K-Nearest Neighbors to match candidates to relevant jobs.',
+      'Executed multi-hop skill-gap queries in under 45ms across thousands of tech postings.',
     ],
-    keyMetric: 'FastRP 64D graph vector embeddings · Sub-45ms Cypher multi-hop query execution',
     githubUrl: 'https://github.com/ronil2149/job-market-knowledge-graph',
   },
   {
@@ -181,12 +176,12 @@ export const PROJECTS: Project[] = [
     category: 'humber',
     badge: 'Humber College Capstone',
     stack: ['Apache Spark', 'Spark SQL', 'Spark MLlib', 'Hadoop HDFS', 'Apache Hive', 'Scala'],
-    description: [
-      'An end-to-end distributed Big Data pipeline analyzing 1,259 workplace mental-health survey responses across 24 variables to predict treatment-seeking behavior in the tech industry.',
-      'The raw data was messy—containing 49 unformatted variants for gender and company sizes corrupted into date formats. I ingested the raw data into Hadoop HDFS, defined external Hive schemas, and ran Spark SQL transformations in memory.',
-      'Trained Spark MLlib Logistic Regression (0.707 AUC) and Decision Tree (0.695 AUC) models to uncover the workplace factors that most strongly correlate with employees seeking mental health support.',
+    summary: 'A distributed Big Data analytics pipeline that predicts workplace mental health treatment-seeking trends in tech.',
+    highlights: [
+      'Ingested 1,259 messy survey responses into Hadoop HDFS and cleaned corrupted columns using Spark SQL.',
+      'Trained Spark MLlib Logistic Regression (0.707 AUC) and Decision Tree (0.695 AUC) models to identify key workplace factors.',
+      'Built an interactive visualization web dashboard hosted on GitHub Pages to showcase insights.',
     ],
-    keyMetric: '1,259 records cleaned · 0.707 ROC-AUC score · Spark MLlib & HDFS pipeline',
     liveUrl: 'https://ronil2149.github.io/mental-health-big-data-analytics/',
     githubUrl: 'https://github.com/ronil2149/mental-health-big-data-analytics',
   },
@@ -194,14 +189,14 @@ export const PROJECTS: Project[] = [
     id: 'los-angeles-crime-dashboard',
     title: 'Los Angeles Crime Trends — BI Geospatial Intelligence',
     category: 'humber',
-    badge: 'Humber College Project · Team Code Blooded',
+    badge: 'Humber College Project',
     stack: ['Tableau BI', 'SQL', 'Geospatial Analysis', 'Open Data ETL'],
-    description: [
-      'An interactive Business Intelligence dashboard analyzing over 1,000,000 LAPD crime incident records from 2020 onward, published on Tableau Public.',
-      'I wrote the SQL data pipelines to clean, filter, and aggregate noisy municipal open data, structuring dynamic Tableau parameters and geospatial maps so users can drill down into crime density by division, time of day, and weapon type.',
-      'Provides actionable intelligence across 21 LAPD geographic divisions with dynamic KPI cards.',
+    summary: 'An interactive business intelligence dashboard analyzing over 1,000,000 LAPD crime incidents from 2020 onward.',
+    highlights: [
+      'Wrote SQL queries to clean, aggregate, and normalize raw open municipal records across 21 LAPD divisions.',
+      'Built dynamic Tableau maps and parameters letting users filter crime incidents by neighborhood, weapon, and time of day.',
+      'Published publicly on Tableau Public with responsive KPI metric cards.',
     ],
-    keyMetric: '1M+ open-data crime records analyzed · Published on Tableau Public',
     liveUrl: 'https://public.tableau.com/app/profile/ronil.ghoghari3778/viz/Final_Project_Code_Blooded/Dashboard1?publish=yes',
     githubUrl: 'https://github.com/ronil2149/los-angeles-crime-trends-tableau-dashboard',
   },
@@ -211,12 +206,12 @@ export const PROJECTS: Project[] = [
     category: 'humber',
     badge: 'Humber College Project',
     stack: ['Python', 'TensorFlow', 'Keras', 'MNE', '1D-CNN', 'BiLSTM', 'Biomedical Signal Processing'],
-    description: [
-      'A deep-learning experiment classifying continuous physiological sleep signals (EEG, EOG, EMG) into clinical stages using Python, TensorFlow, and MNE.',
-      'I segmented raw recordings into 30-second epochs, applied 50Hz notch and bandpass filters to strip electrical artifacts, and evaluated a hybrid 1D-CNN + Bidirectional LSTM architecture against a CNN-only baseline to capture both local waveform features and temporal transitions.',
-      'Documented the full signal processing pipeline and clinical validation limitations in a published research report.',
+    summary: 'A deep learning biomedical signal pipeline classifying continuous sleep recordings (EEG, EOG, EMG) into clinical stages.',
+    highlights: [
+      'Segmented raw physiological signals into 30-second epochs and applied 50Hz notch and bandpass filters using MNE.',
+      'Built a hybrid 1D-CNN + Bidirectional LSTM in TensorFlow to capture both local waveform shape and temporal transitions.',
+      'Evaluated model performance against clinical sleep annotations and published findings in a research report.',
     ],
-    keyMetric: '30s epoch biomedical signal segmentation · Hybrid Conv1D + BiLSTM temporal model',
     githubUrl: 'https://github.com/ronil2149/sleep-stage-classification-deep-learning',
   },
   {
@@ -225,11 +220,12 @@ export const PROJECTS: Project[] = [
     category: 'humber',
     badge: 'Humber College Project',
     stack: ['Angular 19', 'TypeScript', 'RxJS', 'HttpClient', 'Reactive Forms', 'Vercel'],
-    description: [
-      'A single-page application built to explore modern Angular 19 patterns: standalone routed components, typed HttpClient services, and reactive form state management.',
-      'Features declarative RxJS observable pipelines for API data fetching with automatic subscription cleanup via AsyncPipe, paired with dynamic reactive forms enforcing real-time validation rules and deployed on Vercel.',
+    summary: 'A modern Angular 19 single-page application demonstrating standalone components and reactive state streams.',
+    highlights: [
+      'Implemented standalone routed components with typed HttpClient services and AsyncPipe subscription management.',
+      'Built dynamic reactive forms with real-time validation and clean error handling.',
+      'Deployed directly to Vercel edge with fast initial render times and zero unhandled subscriptions.',
     ],
-    keyMetric: '100% typed RxJS streams · Zero memory leaks · Instant Vercel edge deployment',
     liveUrl: 'https://angular-assignment-umber.vercel.app',
     githubUrl: 'https://github.com/ronil2149/angular_assignment',
   },
@@ -239,11 +235,12 @@ export const PROJECTS: Project[] = [
     category: 'humber',
     badge: 'Humber College Capstone',
     stack: ['Kotlin', 'Android SDK', 'SQLite', 'Material Design', 'Gradle'],
-    description: [
-      'A native Android application built in Kotlin to help senior citizens easily request home assistance, medical check-ins, and companion services.',
-      'Designed with senior-friendly high-contrast UI, large touch targets, simplified 2-step booking flows, and local SQLite caching for offline persistence.',
+    summary: 'A native Android assistance application designed to help senior citizens request home and medical check-in services.',
+    highlights: [
+      'Built in Kotlin with high-contrast Material Design components, large touch targets, and a simple 2-step booking flow.',
+      'Implemented local SQLite database caching so elderly users can access emergency contact information offline.',
+      'Tested touch accessibility and battery performance across real Android devices.',
     ],
-    keyMetric: 'Native Kotlin Android app · Local SQLite caching · Emergency contact dispatch',
     githubUrl: 'https://github.com/ronil2149/senior-services-app',
   },
   {
@@ -252,11 +249,12 @@ export const PROJECTS: Project[] = [
     category: 'humber',
     badge: 'Humber College Project',
     stack: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'jQuery', 'Swiper.js', 'GitHub Pages'],
-    description: [
-      'A fast, lightweight restaurant showcase and reservation site built intentionally without heavy JavaScript framework runtimes.',
-      'Pure semantic HTML5, modern CSS Grid/Flexbox, and vanilla JavaScript with Swiper.js and localStorage persistence for reservation inquiries. Near-instant cold loads under 500ms and a 98+ mobile Lighthouse score.',
+    summary: 'A fast, lightweight restaurant showcase and reservation site built without heavy JavaScript frameworks.',
+    highlights: [
+      'Built with pure semantic HTML5, modern CSS Grid/Flexbox, and vanilla JavaScript.',
+      'Integrated Swiper.js for menu galleries and localStorage to retain reservation inquiries across sessions.',
+      'Achieved sub-500ms cold loads and a 98+ mobile Lighthouse score with zero runtime bundle overhead.',
     ],
-    keyMetric: 'Sub-500ms cold load · 98+ mobile Lighthouse score · Zero runtime bundle overhead',
     liveUrl: 'https://ronil2149.github.io/trinity-restaurant-website/',
     githubUrl: 'https://github.com/ronil2149/trinity-restaurant-website',
   },
@@ -268,10 +266,12 @@ export const PROJECTS: Project[] = [
     category: 'btech',
     badge: 'Uka Tarsadia University',
     stack: ['Node.js', 'Express.js', 'Handlebars (HBS)', 'REST APIs', 'Vercel'],
-    description: [
-      'A server-rendered movie discovery application built with Node.js, Express, and Handlebars (HBS), featuring live movie database querying, category filtering, search, and deployment on Vercel.',
+    summary: 'A server-rendered movie discovery portal built with Node.js, Express, and Handlebars templates.',
+    highlights: [
+      'Integrated external movie database REST APIs with server-side caching for fast page delivery.',
+      'Built genre filtering, search, and dynamic layout templates using Handlebars (HBS).',
+      'Deployed on Vercel with responsive mobile and desktop layouts.',
     ],
-    keyMetric: 'Server-side template rendering · External API integration · Vercel deployment',
     liveUrl: 'https://movie-webapp-seven.vercel.app',
     githubUrl: 'https://github.com/ronil2149/movie_webapp',
   },
@@ -281,11 +281,12 @@ export const PROJECTS: Project[] = [
     category: 'btech',
     badge: 'Uka Tarsadia University · B.Tech Capstone',
     stack: ['JavaScript (Node.js)', 'Express.js', 'MVC Architecture', 'REST APIs', 'Middleware'],
-    description: [
-      'Completed in April 2021 during the final semester of my Bachelor of Technology degree in Computer Engineering.',
-      'Engineered a complete Model-View-Controller backend with Express routes, middleware, and request controllers handling table reservations, menu catalog updates, and order workflows.',
+    summary: 'A complete RESTful backend for managing restaurant table reservations, menus, and order workflows.',
+    highlights: [
+      'Structured with Express MVC architecture, separation of concerns, and reusable request middleware.',
+      'Handled input sanitization, error propagation, and route controllers for table booking operations.',
+      'Completed as my B.Tech Computer Engineering capstone in April 2021.',
     ],
-    keyMetric: 'Full Express MVC architecture · Custom middleware & route controllers',
     githubUrl: 'https://github.com/ronil2149/restaurant',
   },
   {
@@ -294,10 +295,12 @@ export const PROJECTS: Project[] = [
     category: 'btech',
     badge: 'Uka Tarsadia University',
     stack: ['TypeScript', 'React', 'HTML5', 'CSS3', 'LocalStorage'],
-    description: [
-      'An interactive timed quiz application built with TypeScript and React, featuring randomized question ordering, real-time score tracking, countdown timers, and answer review summaries.',
+    summary: 'An interactive timed assessment web app built with React and TypeScript.',
+    highlights: [
+      'Built state-driven question progression, randomized answer ordering, and real-time countdown timers.',
+      'Stored exam state in localStorage to prevent data loss on accidental page refreshes.',
+      'Provided instant score summaries and answer reviews upon quiz completion.',
     ],
-    keyMetric: 'State-driven examination engine · Dynamic timers & review analytics',
     githubUrl: 'https://github.com/ronil2149/quiz-app',
   },
   {
@@ -305,12 +308,13 @@ export const PROJECTS: Project[] = [
     title: 'Computer Engineering Foundations — Systems & Distributed Computing',
     category: 'btech',
     badge: 'Uka Tarsadia University · B.Tech Degree',
-    stack: ['C++', 'Java', 'SQL (MySQL)', 'Data Structures & Algorithms', 'Operating Systems', 'Computer Networks'],
-    description: [
-      'Rigorous 4-year Bachelor of Technology in Computer Engineering (Jun 2017 – May 2021) covering core software engineering principles.',
-      'Deep foundations in relational database schema normalization (3NF/BCNF), query execution plan optimization, multi-threaded process scheduling, object-oriented design patterns, and network socket programming.',
+    stack: ['C++', 'Java', 'SQL (MySQL)', 'Data Structures & Algorithms', 'Operating Systems', 'Networks'],
+    summary: 'Undergraduate degree in Computer Engineering (Jun 2017 – May 2021) focusing on software systems and databases.',
+    highlights: [
+      'Studied relational database schema normalization (3NF/BCNF), indexing strategies, and SQL query plans.',
+      'Built core foundations in data structures, algorithms, operating system process scheduling, and socket programming.',
+      'Completed coursework and labs in C++, Java, MySQL, and full-stack web development.',
     ],
-    keyMetric: 'B.Tech in Computer Engineering degree conferred with Software & Database focus',
     githubUrl: 'https://github.com/ronil2149/Web_Programming_ITS',
   },
 ];

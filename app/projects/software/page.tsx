@@ -35,7 +35,7 @@ export default function SoftwareProjectsPage() {
           </div>
           <h1 className="project-page-title">Software &amp; Web Development</h1>
           <p className="project-page-description">
-            Full-stack applications, APIs, database-backed architectures, frontend interfaces, and containerized cloud deployments.
+            Full-stack web applications, REST APIs, database persistence layers, and containerized deployments.
           </p>
         </header>
 
@@ -46,18 +46,10 @@ export default function SoftwareProjectsPage() {
               <span className="category-badge category-badge--live-apps">Production Live App</span>
               <h3>
                 <a href="https://lablecropper.com/" target="_blank" rel="noopener noreferrer">
-                  LabelCropper — High-Volume Thermal Shipping Label Processor
+                  LabelCropper — High-Volume Shipping Label Processor
                 </a>
               </h3>
-              <p className="stack">React 19 · TypeScript · Node.js · Express.js · Supabase Auth · Web Workers · PDF-Lib · WCAG 2.1 AA</p>
-              <div className="project-preview-frame">
-                <img
-                  src="/images/projects/labelcropper.svg"
-                  alt="LabelCropper Interface Preview"
-                  className="project-preview-img"
-                  loading="lazy"
-                />
-              </div>
+              <p className="stack">React 19 · TypeScript · Node.js · Express.js · Supabase Auth · Web Workers · PDF-Lib</p>
               <div className="project-links">
                 <a className="live" href="https://lablecropper.com/" target="_blank" rel="noopener noreferrer">
                   Open running app →
@@ -67,25 +59,15 @@ export default function SoftwareProjectsPage() {
                 </a>
               </div>
             </div>
-            <div className="project-card-details">
-              <div className="project-detail-section">
-                <span className="detail-label">Problem:</span>
-                <p>
-                  E-commerce sellers on Meesho, Flipkart, and Amazon receive mixed A4 PDF manifests containing tax invoices and thermal shipping labels. Manually cropping and filtering thermal 4x6 labels was slow (3–5 minutes per batch) and risked exposing customer PII (addresses, phone numbers, GSTIN) to third-party cloud servers.
-                </p>
-              </div>
-              <div className="project-detail-section">
-                <span className="detail-label">Architecture &amp; Trade-offs:</span>
-                <p>
-                  Offloaded 100% of PDF parsing, invoice stripping, and barcode isolation to browser Web Workers via PDF-Lib. Customer shipping data never touches server infrastructure, eliminating server compute bills entirely while protecting merchant compliance.
-                </p>
-              </div>
-              <div className="project-detail-section project-detail-section--result">
-                <span className="detail-label">Quantified Result:</span>
-                <p>
-                  <strong>Processes 50,000+ monthly visits; reduced batch processing latency by 40% (under 2s for 50 pages); $0 server compute bills; 90+ Lighthouse score.</strong>
-                </p>
-              </div>
+            <div className="project-card-body">
+              <p className="project-summary">
+                A browser-based shipping label formatter used by 50,000+ monthly e-commerce sellers on Meesho, Flipkart, and Amazon.
+              </p>
+              <ul className="project-bullets">
+                <li>Moved all PDF parsing, invoice stripping, and barcode isolation into client-side Web Workers using PDF-Lib.</li>
+                <li>Protected merchant privacy by keeping all customer shipping addresses and GST details directly in the browser—saving 100% on cloud compute bills.</li>
+                <li>Cut batch processing time by 40% (under 2s for 50 pages) while keeping Lighthouse scores above 90.</li>
+              </ul>
             </div>
           </article>
 
@@ -99,14 +81,6 @@ export default function SoftwareProjectsPage() {
                 </a>
               </h3>
               <p className="stack">TypeScript · HTML5 · CSS3 · GitHub REST API · GitHub Actions CI/CD · Edge CDN</p>
-              <div className="project-preview-frame">
-                <img
-                  src="/images/projects/revkit.svg"
-                  alt="RevKit Directory Interface Preview"
-                  className="project-preview-img"
-                  loading="lazy"
-                />
-              </div>
               <div className="project-links">
                 <a className="live" href="https://revkit.online/" target="_blank" rel="noopener noreferrer">
                   Open running app →
@@ -116,25 +90,15 @@ export default function SoftwareProjectsPage() {
                 </a>
               </div>
             </div>
-            <div className="project-card-details">
-              <div className="project-detail-section">
-                <span className="detail-label">Problem:</span>
-                <p>
-                  Reverse engineers and security researchers lacked a centralized, high-signal discovery platform for decompilers, debuggers, and binary analysis frameworks, relying instead on stale awesome-lists and forum threads.
-                </p>
-              </div>
-              <div className="project-detail-section">
-                <span className="detail-label">Architecture &amp; Trade-offs:</span>
-                <p>
-                  Built as a zero-database, static edge-delivered web platform. Automated GitHub Actions cron workflows index repositories, stars, and release metadata into a normalized JSON index, powering instant client-side filtering without database latency.
-                </p>
-              </div>
-              <div className="project-detail-section project-detail-section--result">
-                <span className="detail-label">Quantified Result:</span>
-                <p>
-                  <strong>Curates 1,023+ indexed tools across 13 categories; 100% automated CI/CD synchronization; sub-100ms global cold load; 100/100 Core Web Vitals.</strong>
-                </p>
-              </div>
+            <div className="project-card-body">
+              <p className="project-summary">
+                A curated discovery platform indexing 1,023+ reverse-engineering tools, decompilers, and debuggers for security researchers.
+              </p>
+              <ul className="project-bullets">
+                <li>Replaced static GitHub awesome-lists with an automated CI pipeline that checks stars, tags, and commits weekly.</li>
+                <li>Built a client-side search engine that filters across 13 security categories in under 50ms with zero database latency.</li>
+                <li>Hosted statically on an edge CDN for sub-100ms global cold loads and a perfect 100/100 Core Web Vitals score.</li>
+              </ul>
             </div>
           </article>
 
@@ -148,14 +112,6 @@ export default function SoftwareProjectsPage() {
                 </a>
               </h3>
               <p className="stack">Java 17 · J2EE Servlets · JSP/JSTL · JDBC · MySQL · Apache Tomcat · Docker · Render · Maven</p>
-              <div className="project-preview-frame">
-                <img
-                  src="/images/projects/device-protection.svg"
-                  alt="Device Protection Portal Architecture Preview"
-                  className="project-preview-img"
-                  loading="lazy"
-                />
-              </div>
               <div className="project-links">
                 <a className="live" href="https://j2ee-device-protection-project.onrender.com" target="_blank" rel="noopener noreferrer">
                   Open running app →
@@ -165,25 +121,15 @@ export default function SoftwareProjectsPage() {
                 </a>
               </div>
             </div>
-            <div className="project-card-details">
-              <div className="project-detail-section">
-                <span className="detail-label">Problem:</span>
-                <p>
-                  Hardware warranty providers need secure, multi-tenant workflows for customers to register devices and submit repair claims, while adjusters audit evidence and generate compliance reports.
-                </p>
-              </div>
-              <div className="project-detail-section">
-                <span className="detail-label">Architecture &amp; Trade-offs:</span>
-                <p>
-                  Built with Servlet MVC and a DAO persistence layer over JDBC with connection pooling. Used PreparedStatements to prevent SQL injection and Servlet Authentication Filters for Role-Based Access Control (RBAC). Packaged as a multi-stage Docker container deployed on Render.
-                </p>
-              </div>
-              <div className="project-detail-section project-detail-section--result">
-                <span className="detail-label">Quantified Result:</span>
-                <p>
-                  <strong>End-to-end device warranty registration and claim workflow; zero runtime container memory leaks under load testing; 100% reproducible Docker deployment.</strong>
-                </p>
-              </div>
+            <div className="project-card-body">
+              <p className="project-summary">
+                An enterprise hardware warranty portal where customers register covered devices and adjusters audit repair claims.
+              </p>
+              <ul className="project-bullets">
+                <li>Implemented a Java Servlet MVC architecture with a DAO persistence layer over JDBC and MySQL connection pooling.</li>
+                <li>Used PreparedStatements to block SQL injection and added Servlet Filters for role-based authentication between customers and admins.</li>
+                <li>Packaged into a multi-stage Docker container deployed on Render with zero memory leaks during concurrent load testing.</li>
+              </ul>
             </div>
           </article>
 
@@ -203,25 +149,15 @@ export default function SoftwareProjectsPage() {
                 </a>
               </div>
             </div>
-            <div className="project-card-details">
-              <div className="project-detail-section">
-                <span className="detail-label">Problem:</span>
-                <p>
-                  Equipment rental marketplaces suffer from inventory race conditions, double-booking overlapping dates, and untrusted peer-to-peer user communications.
-                </p>
-              </div>
-              <div className="project-detail-section">
-                <span className="detail-label">Architecture &amp; Trade-offs:</span>
-                <p>
-                  Engineered rental availability scheduling algorithms with date-range overlap validation that prevents conflicting bookings. Built stateless JWT authentication with secure HTTP-only cookies and role-aware middleware for user and admin privileges.
-                </p>
-              </div>
-              <div className="project-detail-section project-detail-section--result">
-                <span className="detail-label">Quantified Result:</span>
-                <p>
-                  <strong>Zero double-booking concurrency bugs during stress testing; sub-200ms API response times for catalog search and booking requests.</strong>
-                </p>
-              </div>
+            <div className="project-card-body">
+              <p className="project-summary">
+                A peer-to-peer equipment rental web app for booking cameras, audio gear, and tools without scheduling conflicts.
+              </p>
+              <ul className="project-bullets">
+                <li>Engineered date-range overlap validation in MongoDB to prevent double-booking when users reserve the same item.</li>
+                <li>Implemented stateless JWT authentication stored in HTTP-only cookies with role-based routing for renters and owners.</li>
+                <li>Maintained sub-200ms catalog search and reservation response times during stress tests.</li>
+              </ul>
             </div>
           </article>
 
@@ -244,25 +180,15 @@ export default function SoftwareProjectsPage() {
                 </a>
               </div>
             </div>
-            <div className="project-card-details">
-              <div className="project-detail-section">
-                <span className="detail-label">Problem:</span>
-                <p>
-                  Demonstrating enterprise-grade reactive form validation and observable stream handling in modern Angular with standalone routed components.
-                </p>
-              </div>
-              <div className="project-detail-section">
-                <span className="detail-label">Architecture &amp; Trade-offs:</span>
-                <p>
-                  Utilized Angular standalone components with RxJS observable pipelines for asynchronous data streams and declarative form validation schemas with clean error boundaries.
-                </p>
-              </div>
-              <div className="project-detail-section project-detail-section--result">
-                <span className="detail-label">Quantified Result:</span>
-                <p>
-                  <strong>100% typed data flows, zero runtime memory leaks from unhandled subscriptions, instant edge deployment on Vercel.</strong>
-                </p>
-              </div>
+            <div className="project-card-body">
+              <p className="project-summary">
+                A modern Angular 19 single-page application demonstrating standalone components, typed HTTP services, and reactive state streams.
+              </p>
+              <ul className="project-bullets">
+                <li>Built standalone routed components with RxJS observable pipelines and automatic subscription cleanup via AsyncPipe.</li>
+                <li>Implemented dynamic reactive forms with real-time validation schemas and clean error boundaries.</li>
+                <li>Deployed directly to Vercel edge with fast initial render times and zero unhandled subscriptions.</li>
+              </ul>
             </div>
           </article>
         </div>

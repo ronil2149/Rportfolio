@@ -222,6 +222,13 @@ section {
   border-bottom-color: var(--sun);
 }
 
+.hero-contact-loc {
+  color: rgba(var(--mist-rgb), 0.7);
+  font-size: 0.92rem;
+  display: inline-flex;
+  align-items: center;
+}
+
 .cue {
   letter-spacing: 0.14em;
   color: rgba(var(--mist-rgb), 0.45);
@@ -776,6 +783,29 @@ button:focus-visible {
   line-height: 1.62;
   margin: 0;
   font-size: clamp(0.92rem, 2.2vw, 0.98rem);
+}
+
+.project-summary {
+  color: rgba(var(--mist-rgb), 0.92);
+  font-size: clamp(0.95rem, 2.3vw, 1.02rem);
+  line-height: 1.55;
+  margin: 0;
+  font-weight: 500;
+}
+
+.project-bullets {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: rgba(var(--mist-rgb), 0.82);
+  font-size: clamp(0.88rem, 2.2vw, 0.94rem);
+  line-height: 1.58;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.project-bullets li {
+  margin: 0;
 }
 
 .project-key-metric {
