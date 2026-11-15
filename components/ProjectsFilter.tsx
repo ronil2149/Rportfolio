@@ -5,16 +5,13 @@ import { CATEGORIES, PROJECTS, CategoryId, Project } from '@/lib/projectsData';
 
 export function ProjectsFilter() {
   const [activeCategory, setActiveCategory] = useState<CategoryId>('all');
-  const [isPending, startTransition] = useTransition();
+  const [, startTransition] = useTransition();
 
   useEffect(() => {
     function syncFromUrl() {
-      // 1. Check hash
       const hash = window.location.hash.replace('#', '').toLowerCase();
-      // 2. Check query params
       const params = new URLSearchParams(window.location.search);
       const catParam = params.get('category')?.toLowerCase();
-
       const target = catParam || hash;
 
       if (target === 'live-apps' || target === 'live' || target === 'apps') {
@@ -54,8 +51,8 @@ export function ProjectsFilter() {
 
   return (
     <div className="projects-filter-wrapper" id="projects-filter">
-      {/* Category Tabs */}
-      <div className="filter-nav" role="tablist" aria-label="Project Categories">
+      {/* Category Filter Pills */}
+      <div className="filter-nav" role="tablist" aria-label="Filter projects by category">
         {CATEGORIES.map((cat) => {
           const count = cat.id === 'all'
             ? PROJECTS.length
@@ -72,22 +69,14 @@ export function ProjectsFilter() {
               className={`filter-btn ${isActive ? 'filter-btn--active' : ''}`}
               onClick={() => handleSelectCategory(cat.id)}
             >
-              <span className="filter-btn-label">{cat.label}</span>
+              <span>{cat.label}</span>
               <span className="filter-btn-count">{count}</span>
             </button>
           );
         })}
       </div>
 
-      {/* Filter Info Bar */}
-      <div className="filter-active-status" aria-live="polite">
-        Showing <strong>{filteredProjects.length}</strong> project{filteredProjects.length === 1 ? '' : 's'} in{' '}
-        <span className="filter-active-tag">
-          {CATEGORIES.find((c) => c.id === activeCategory)?.label}
-        </span>
-      </div>
-
-      {/* Project Cards */}
+      {/* Projects List */}
       <div
         className="strata project-cards-grid"
         role="tabpanel"
@@ -97,8 +86,8 @@ export function ProjectsFilter() {
         {filteredProjects.map((project: Project) => (
           <article key={project.id} className="seam project-card" id={project.id}>
             <div className="project-card-header">
-              <span className={`category-badge category-badge--${project.category}`}>
-                {project.categoryLabel}
+              <span className={`project-badge project-badge--${project.category}`}>
+                {project.badge}
               </span>
               <h3>
                 {project.liveUrl ? (
@@ -129,23 +118,17 @@ export function ProjectsFilter() {
               </div>
             </div>
 
-            <div className="project-card-details">
-              <div className="project-detail-section">
-                <span className="detail-label">Problem:</span>
-                <p>{project.problem}</p>
-              </div>
+            <div className="project-card-body">
+              {project.description.map((paragraph, idx) => (
+                <p key={idx}>{paragraph}</p>
+              ))}
 
-              <div className="project-detail-section">
-                <span className="detail-label">Architecture &amp; Trade-offs:</span>
-                <p>{project.architecture}</p>
-              </div>
-
-              <div className="project-detail-section project-detail-section--result">
-                <span className="detail-label">Quantified Result:</span>
-                <p>
-                  <strong>{project.result}</strong>
-                </p>
-              </div>
+              {project.keyMetric && (
+                <div className="project-key-metric">
+                  <span className="metric-dot" aria-hidden="true" />
+                  <span>{project.keyMetric}</span>
+                </div>
+              )}
             </div>
           </article>
         ))}
@@ -153,4 +136,3 @@ export function ProjectsFilter() {
     </div>
   );
 }
-

@@ -10,7 +10,7 @@ export function Content() {
           <em>Ghoghari</em>
         </h1>
         <p className="hero-note">
-          Full-Stack Software Developer based in Toronto, ON with 3+ years of experience engineering high-performance web applications across TypeScript, React, Next.js, Node.js, Express, Java/J2EE, PostgreSQL/SQL, Docker, and AWS. I track down why systems break — from an unexpected client-side state glitch to the database record that caused it.
+          Full-stack developer in Toronto. I build web applications and track down why they break — from an unexpected render glitch in React down to the database record that caused it. Five years shipping code across TypeScript, React, Next.js, Node.js, Java, and SQL.
         </p>
         <ul className="hero-meta">
           <li>
@@ -76,9 +76,9 @@ export function Content() {
         <div id="humber" tabIndex={-1} style={{ position: 'relative', top: '-1rem' }} />
         <div id="btech" tabIndex={-1} style={{ position: 'relative', top: '-1rem' }} />
 
-        <h2>Things I have built and can verify</h2>
+        <h2>Things I have built and can show you</h2>
         <p className="lede">
-          Every project below represents production code, enterprise experience, or academic capstones. Filter by category or use the direct deep-links from my resume.
+          Every project below is real code you can test and inspect. Filter by category or jump directly to live deployments and GitHub repositories.
         </p>
 
         {/* Interactive Filterable Projects Grid */}
