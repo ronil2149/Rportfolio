@@ -52,8 +52,7 @@ export const PROJECTS: Project[] = [
       'Hosted statically on an edge CDN for sub-100ms cold loads and a perfect 100/100 Core Web Vitals score.',
     ],
     liveUrl: 'https://revkit.online/',
-    githubUrl: 'https://github.com/ronil2149',
-    githubLabel: 'GitHub profile ↗',
+    githubLabel: 'Private Commercial Repo · Case Study',
   },
   {
     id: 'videlto',
@@ -68,8 +67,7 @@ export const PROJECTS: Project[] = [
       'Cached rendered assets on Cloudflare CDN to keep global TTFB under 150ms.',
     ],
     liveUrl: 'https://videlto.online/',
-    githubUrl: 'https://github.com/ronil2149',
-    githubLabel: 'GitHub profile ↗',
+    githubLabel: 'Private Commercial Repo · Case Study',
   },
 
   // --- WORK EXPERIENCE ---

@@ -71,11 +71,11 @@ export function Content() {
 
         <ul className="hero-meta">
           <li>
-            <span className="badge">Work Permit</span>
-            <b>Open Work Permit (PGWP)</b> — eligible to work full-time in Canada, no visa sponsorship needed.
+            <span className="badge">Status</span>
+            <b>Available Immediately</b> · Full-Stack / Frontend Developer · Toronto, ON (Hybrid / On-Site) · Open Work Permit (PGWP).
           </li>
           <li>
-            <span className="badge">Current / Recent</span>
+            <span className="badge">Experience</span>
             Web &amp; Frontend Support Developer at{' '}
             <a className="badge-link" href="#experience" title="View Work Experience proof">
               <b>Ambrosia Natural Foods</b>
@@ -83,7 +83,7 @@ export function Content() {
             (Toronto, ON).
           </li>
           <li>
-            <span className="badge">Live Production Apps</span>
+            <span className="badge">Live Apps</span>
             Shipped{' '}
             <a className="badge-link" href="#live-apps" title="View LabelCropper">
               <b>LabelCropper</b>
@@ -296,7 +296,7 @@ export function Content() {
           </div>
           <div>
             <dt>Testing &amp; Diagnostics</dt>
-            <dd>Postman, Chrome DevTools Network Triage, Jest, Lighthouse, Root-Cause Analysis, SQL Auditing</dd>
+            <dd>Postman, Chrome DevTools Network Triage, Jest, Playwright, Cypress, Lighthouse, Root-Cause Analysis, SQL Auditing</dd>
           </div>
           <div>
             <dt>Standards &amp; Accessibility</dt>

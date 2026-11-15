@@ -1387,3 +1387,26 @@ button:focus-visible {
   color: #6ee7b7 !important;
   border-color: rgba(16, 185, 129, 0.5) !important;
 }
+
+.render-cold-start-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.74rem;
+  letter-spacing: 0.02em;
+  color: var(--sun);
+  background: rgba(var(--sun-rgb), 0.12);
+  border: 1px solid rgba(var(--sun-rgb), 0.35);
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.code-link--private {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.82rem;
+  color: var(--limestone);
+  opacity: 0.85;
+  cursor: default;
+  font-family: inherit;
+}

@@ -40,7 +40,7 @@ export default function SoftwareProjectsPage() {
         </header>
 
         <div className="strata project-page-projects">
-          {/* Label Cropper */}
+          {/* 1. Label Cropper */}
           <article className="seam project-card">
             <div className="project-card-header">
               <span className="category-badge category-badge--live-apps">Production Live App</span>
@@ -71,7 +71,7 @@ export default function SoftwareProjectsPage() {
             </div>
           </article>
 
-          {/* RevKit */}
+          {/* 2. RevKit */}
           <article className="seam project-card">
             <div className="project-card-header">
               <span className="category-badge category-badge--live-apps">Production Live App</span>
@@ -85,9 +85,9 @@ export default function SoftwareProjectsPage() {
                 <a className="live" href="https://revkit.online/" target="_blank" rel="noopener noreferrer">
                   Open running app →
                 </a>
-                <a className="code-link" href="https://github.com/ronil2149" target="_blank" rel="noopener noreferrer">
-                  GitHub profile ↗
-                </a>
+                <span className="code-link code-link--private">
+                  Private Commercial Repo · Case Study
+                </span>
               </div>
             </div>
             <div className="project-card-body">
@@ -102,38 +102,38 @@ export default function SoftwareProjectsPage() {
             </div>
           </article>
 
-          {/* Device Protection Portal */}
+          {/* 3. Videlto (Replaces Angular 19 SPA) */}
           <article className="seam project-card">
             <div className="project-card-header">
-              <span className="category-badge category-badge--humber">Humber College Capstone</span>
+              <span className="category-badge category-badge--live-apps">Production Live App</span>
               <h3>
-                <a href="https://github.com/ronil2149/j2ee-device-protection-project" target="_blank" rel="noopener noreferrer">
-                  Device Protection Portal — Hardware Warranty &amp; Claims Management
+                <a href="https://videlto.online/" target="_blank" rel="noopener noreferrer">
+                  Videlto — Commercial Video Ad Studio
                 </a>
               </h3>
-              <p className="stack">Java 17 · J2EE Servlets · JSP/JSTL · JDBC · MySQL · Apache Tomcat · Docker · Render · Maven</p>
+              <p className="stack">Next.js (App Router) · React · TypeScript · Tailwind CSS · Cloudflare CDN · Render</p>
               <div className="project-links">
-                <a className="live" href="https://j2ee-device-protection-project.onrender.com" target="_blank" rel="noopener noreferrer">
+                <a className="live" href="https://videlto.online/" target="_blank" rel="noopener noreferrer">
                   Open running app →
                 </a>
-                <a className="code-link" href="https://github.com/ronil2149/j2ee-device-protection-project" target="_blank" rel="noopener noreferrer">
-                  GitHub repository ↗
-                </a>
+                <span className="code-link code-link--private">
+                  Private Commercial Repo · Case Study
+                </span>
               </div>
             </div>
             <div className="project-card-body">
               <p className="project-summary">
-                An enterprise hardware warranty portal where customers register covered devices and adjusters audit repair claims.
+                A full-stack video studio platform turning static DTC e-commerce product photos into 9:16 vertical motion video ads for TikTok, Instagram Reels, and YouTube Shorts.
               </p>
               <ul className="project-bullets">
-                <li>Implemented a Java Servlet MVC architecture with a DAO persistence layer over JDBC and MySQL connection pooling.</li>
-                <li>Used PreparedStatements to block SQL injection and added Servlet Filters for role-based authentication between customers and admins.</li>
-                <li>Packaged into a multi-stage Docker container deployed on Render with zero memory leaks during concurrent load testing.</li>
+                <li>Transforms static catalog photography into launch-ready 9:16 vertical video creative in under 10 seconds.</li>
+                <li>Decoupled video composition from web requests using an asynchronous worker queue, allowing client previews to stream reliably without HTTP timeouts.</li>
+                <li>Cached rendered media assets at the edge using Cloudflare CDN, maintaining sub-150ms TTFB worldwide with authentic product fidelity.</li>
               </ul>
             </div>
           </article>
 
-          {/* RentHub */}
+          {/* 4. RentHub */}
           <article className="seam project-card">
             <div className="project-card-header">
               <span className="category-badge category-badge--humber">Humber College Project</span>
@@ -161,33 +161,44 @@ export default function SoftwareProjectsPage() {
             </div>
           </article>
 
-          {/* Angular SPA */}
+          {/* 5. Device Protection Portal (Moved to bottom with cold start notice & screenshot) */}
           <article className="seam project-card">
             <div className="project-card-header">
-              <span className="category-badge category-badge--humber">Humber College Project</span>
+              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.5rem', marginBottom: '0.35rem' }}>
+                <span className="category-badge category-badge--humber">Humber College Capstone</span>
+                <span className="render-cold-start-badge">Hosted on Render free tier — ~40s cold start</span>
+              </div>
               <h3>
-                <a href="https://github.com/ronil2149/angular_assignment" target="_blank" rel="noopener noreferrer">
-                  Angular 19 SPA — Reactive Forms &amp; RxJS State
+                <a href="https://j2ee-device-protection-project.onrender.com" target="_blank" rel="noopener noreferrer">
+                  Device Protection Portal — Hardware Warranty &amp; Claims Management
                 </a>
               </h3>
-              <p className="stack">Angular 19 · TypeScript · RxJS · HttpClient · Reactive Forms · Vercel</p>
+              <p className="stack">Java 17 · J2EE Servlets · JSP/JSTL · JDBC · MySQL · Apache Tomcat · Docker · Render · Maven</p>
               <div className="project-links">
-                <a className="live" href="https://angular-assignment-umber.vercel.app" target="_blank" rel="noopener noreferrer">
+                <a className="live" href="https://j2ee-device-protection-project.onrender.com" target="_blank" rel="noopener noreferrer">
                   Open running app →
                 </a>
-                <a className="code-link" href="https://github.com/ronil2149/angular_assignment" target="_blank" rel="noopener noreferrer">
+                <a className="code-link" href="https://github.com/ronil2149/j2ee-device-protection-project" target="_blank" rel="noopener noreferrer">
                   GitHub repository ↗
                 </a>
               </div>
             </div>
             <div className="project-card-body">
+              <div className="project-preview-frame">
+                <img
+                  src="/images/device-protection-ui.png"
+                  alt="Device Protection Portal Live Interface"
+                  className="project-preview-img"
+                  loading="lazy"
+                />
+              </div>
               <p className="project-summary">
-                A modern Angular 19 single-page application demonstrating standalone components, typed HTTP services, and reactive state streams.
+                An enterprise hardware warranty portal where customers register covered devices and adjusters audit repair claims.
               </p>
               <ul className="project-bullets">
-                <li>Built standalone routed components with RxJS observable pipelines and automatic subscription cleanup via AsyncPipe.</li>
-                <li>Implemented dynamic reactive forms with real-time validation schemas and clean error boundaries.</li>
-                <li>Deployed directly to Vercel edge with fast initial render times and zero unhandled subscriptions.</li>
+                <li>Implemented a Java Servlet MVC architecture with a DAO persistence layer over JDBC and MySQL connection pooling.</li>
+                <li>Used PreparedStatements to block SQL injection and added Servlet Filters for role-based authentication between customers and admins.</li>
+                <li>Packaged into a multi-stage Docker container deployed on Render with zero memory leaks during concurrent load testing.</li>
               </ul>
             </div>
           </article>

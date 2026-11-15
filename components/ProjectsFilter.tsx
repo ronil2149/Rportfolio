@@ -110,11 +110,15 @@ export function ProjectsFilter() {
                     Open running app →
                   </a>
                 )}
-                {project.githubUrl && (
+                {project.githubLabel && !project.githubUrl ? (
+                  <span className="code-link code-link--private">
+                    {project.githubLabel}
+                  </span>
+                ) : project.githubUrl ? (
                   <a className="code-link" href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                     {project.githubLabel || (project.githubUrl.endsWith('/ronil2149') ? 'GitHub profile ↗' : 'GitHub repository ↗')}
                   </a>
-                )}
+                ) : null}
               </div>
             </div>
 
