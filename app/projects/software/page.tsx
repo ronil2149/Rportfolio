@@ -23,9 +23,9 @@ export default function SoftwareProjectsPage() {
     <main className="project-page">
       <section id="work" className="project-page-section">
         <div className="project-page-nav">
-          <Link className="project-back" href="/#work">
-            ← Back to All Portfolio Projects
-          </Link>
+          <Link className="project-back" href="/#live-apps">
+  ← Back to Portfolio
+</Link>
           <span>5 selected projects</span>
         </div>
         <header className="project-page-hero">
@@ -205,9 +205,9 @@ export default function SoftwareProjectsPage() {
         </div>
 
         <footer className="project-page-footer">
-          <Link className="project-footer-back" href="/#work">
-            ← Back to All Portfolio Projects
-          </Link>
+          <Link className="project-footer-back" href="/#live-apps">
+  ← Back to Portfolio
+</Link>
           <Link className="project-footer-next" href="/projects/data-ai">
             <span>Next category</span>
             <strong>Data, AI &amp; Analytics Hub →</strong>

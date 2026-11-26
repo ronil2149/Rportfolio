@@ -28,17 +28,11 @@ export function Navbar() {
 
         {/* Desktop Navigation Links */}
         <nav className="navbar__desktop" aria-label="Main navigation">
-          <Link href="/#live-apps" className="navbar__link">
-            Live Apps
+          <Link href="/#work" className="navbar__link">
+            Projects
           </Link>
           <Link href="/#experience" className="navbar__link">
             Experience
-          </Link>
-          <Link href="/projects/software" className="navbar__link">
-            Software Hub
-          </Link>
-          <Link href="/projects/data-ai" className="navbar__link">
-            Data &amp; AI
           </Link>
           <Link href="/#kit" className="navbar__link">
             Toolkit
@@ -49,7 +43,7 @@ export function Navbar() {
             rel="noopener noreferrer"
             className="navbar__link navbar__link--resume"
           >
-            Resume ↗
+            Résumé ↗
           </a>
           <a href="/#contact" className="navbar__cta">
             Hire Me
@@ -82,21 +76,15 @@ export function Navbar() {
       {/* Mobile Drawer */}
       {isOpen && (
         <div className="navbar__mobile-drawer" onClick={closeMenu}>
-          <nav className="navbar__mobile-nav" onClick={(e) => e.stopPropagation()}>
-            <Link href="/#live-apps" className="navbar__mobile-link" onClick={closeMenu}>
-              🚀 Production Live Apps
+          <nav className="navbar__mobile-nav" aria-label="Mobile navigation" onClick={(e) => e.stopPropagation()}>
+            <Link href="/#work" className="navbar__mobile-link" onClick={closeMenu}>
+              Projects
             </Link>
             <Link href="/#experience" className="navbar__mobile-link" onClick={closeMenu}>
-              💼 Work Experience
-            </Link>
-            <Link href="/projects/software" className="navbar__mobile-link" onClick={closeMenu}>
-              💻 Software &amp; Web Hub
-            </Link>
-            <Link href="/projects/data-ai" className="navbar__mobile-link" onClick={closeMenu}>
-              📊 Data &amp; AI Analytics Hub
+              Experience
             </Link>
             <Link href="/#kit" className="navbar__mobile-link" onClick={closeMenu}>
-              🛠 Technical Toolkit
+              Toolkit
             </Link>
             <a
               href="/Ronil_dev.pdf"
@@ -105,10 +93,10 @@ export function Navbar() {
               className="navbar__mobile-link navbar__mobile-link--resume"
               onClick={closeMenu}
             >
-              📄 View / Download Resume (PDF) ↗
+              Résumé (PDF) ↗
             </a>
             <a href="/#contact" className="navbar__mobile-cta" onClick={closeMenu}>
-              Say Hello / Hire Me →
+              Hire Me
             </a>
           </nav>
         </div>

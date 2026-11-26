@@ -3,8 +3,15 @@
 import React, { useState, useEffect, useTransition } from 'react';
 import { CATEGORIES, PROJECTS, CategoryId, Project } from '@/lib/projectsData';
 
+type ProjectCategoryId = Exclude<CategoryId, 'experience' | 'all'>;
+
+const PROJECT_CATEGORIES = CATEGORIES.filter(
+  (category) => category.id !== 'experience' && category.id !== 'all'
+);
+const PORTFOLIO_PROJECTS = PROJECTS.filter((project) => project.category !== 'experience');
+
 export function ProjectsFilter() {
-  const [activeCategory, setActiveCategory] = useState<CategoryId>('live-apps');
+  const [activeCategory, setActiveCategory] = useState<ProjectCategoryId>('live-apps');
   const [, startTransition] = useTransition();
 
   useEffect(() => {
@@ -14,16 +21,15 @@ export function ProjectsFilter() {
       const catParam = params.get('category')?.toLowerCase();
       const target = catParam || hash;
 
-      if (target === 'live-apps' || target === 'live' || target === 'apps') {
+      if (
+        target === 'live-apps' || target === 'live' || target === 'apps' ||
+        target === 'work' || target === 'all' || target === 'projects'
+      ) {
         setActiveCategory('live-apps');
-      } else if (target === 'experience' || target === 'work-experience' || target === 'jobs') {
-        setActiveCategory('experience');
       } else if (target === 'humber' || target === 'humber-college' || target === 'it-solutions') {
         setActiveCategory('humber');
       } else if (target === 'btech' || target === 'b-tech' || target === 'university') {
         setActiveCategory('btech');
-      } else if (target === 'work' || target === 'all' || target === 'projects') {
-        setActiveCategory('all');
       }
     }
 
@@ -36,27 +42,26 @@ export function ProjectsFilter() {
     };
   }, []);
 
-  const handleSelectCategory = (categoryId: CategoryId) => {
+  const handleSelectCategory = (categoryId: ProjectCategoryId) => {
     startTransition(() => {
       setActiveCategory(categoryId);
-      const catObj = CATEGORIES.find((c) => c.id === categoryId);
+      const catObj = PROJECT_CATEGORIES.find((c) => c.id === categoryId);
       const anchor = catObj ? catObj.anchor : 'work';
-      window.history.replaceState(null, '', `#${anchor}`);
+      const url = new URL(window.location.href);
+      url.searchParams.delete('category');
+      url.hash = anchor;
+      window.history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
     });
   };
 
-  const filteredProjects = activeCategory === 'all'
-    ? PROJECTS
-    : PROJECTS.filter((p) => p.category === activeCategory);
+  const filteredProjects = PORTFOLIO_PROJECTS.filter((p) => p.category === activeCategory);
 
   return (
     <div className="projects-filter-wrapper" id="projects-filter">
       {/* Category Filter Pills */}
       <div className="filter-nav" role="tablist" aria-label="Filter projects by category">
-        {CATEGORIES.map((cat) => {
-          const count = cat.id === 'all'
-            ? PROJECTS.length
-            : PROJECTS.filter((p) => p.category === cat.id).length;
+        {PROJECT_CATEGORIES.map((cat) => {
+          const count = PORTFOLIO_PROJECTS.filter((p) => p.category === cat.id).length;
           const isActive = activeCategory === cat.id;
 
           return (

@@ -1,8 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import { ProjectsFilter } from './ProjectsFilter';
+import { PROJECTS } from '@/lib/projectsData';
+
+const sforceRepositoryUrl = PROJECTS.find((project) => project.id === 'sforceservices')?.githubUrl;
 
 export function Content() {
   const [copied, setCopied] = useState(false);
@@ -72,7 +74,7 @@ export function Content() {
         <ul className="hero-meta">
           <li>
             <span className="badge">Status</span>
-            <b>Available Immediately</b> · Full-Stack / Frontend Developer · Toronto, ON (Hybrid / On-Site) · Open Work Permit (PGWP).
+            <b>Available Immediately</b> · Full-Stack / Frontend Developer · Toronto, ON.
           </li>
           <li>
             <span className="badge">Experience</span>
@@ -127,7 +129,6 @@ export function Content() {
       <section id="work">
         {/* Invisible anchor elements for direct deep-linking */}
         <div id="live-apps" tabIndex={-1} style={{ position: 'relative', top: '-1rem' }} />
-        <div id="experience" tabIndex={-1} style={{ position: 'relative', top: '-1rem' }} />
         <div id="humber" tabIndex={-1} style={{ position: 'relative', top: '-1rem' }} />
         <div id="btech" tabIndex={-1} style={{ position: 'relative', top: '-1rem' }} />
 
@@ -139,37 +140,10 @@ export function Content() {
         {/* Interactive Filterable Projects Grid */}
         <ProjectsFilter />
 
-        {/* Specialized Hub Links */}
-        <div className="project-hubs">
-          <Link className="project-hub" href="/projects/software">
-            <div className="project-hub-number">01</div>
-            <div className="project-hub-content">
-              <h3>Software &amp; Web Development Hub</h3>
-              <p>
-                In-depth breakdown of full-stack architectures, API design, database schemas, and containerized deployments.
-              </p>
-              <div className="project-hub-meta">
-                <span>View deep dive →</span>
-              </div>
-            </div>
-          </Link>
-          <Link className="project-hub" href="/projects/data-ai">
-            <div className="project-hub-number">02</div>
-            <div className="project-hub-content">
-              <h3>Data, AI &amp; Analytics Hub</h3>
-              <p>
-                Machine learning models, Neo4j knowledge graphs, distributed Spark/HDFS data pipelines, and Tableau BI dashboards.
-              </p>
-              <div className="project-hub-meta">
-                <span>View deep dive →</span>
-              </div>
-            </div>
-          </Link>
-        </div>
       </section>
 
       {/* Scannable Work Experience Snapshot for Recruiters */}
-      <section id="experience-snapshot" className="experience-snapshot-section">
+      <section id="experience" className="experience-snapshot-section">
         <div className="section-header-split">
           <div>
             <h2>Work Experience Snapshot</h2>
@@ -177,9 +151,6 @@ export function Content() {
               Three years of hands-on experience keeping production web applications fast, reliable, and bug-free.
             </p>
           </div>
-          <a href="#experience" className="section-cta-link">
-            Filter all code &amp; repo proof above ↑
-          </a>
         </div>
 
         <div className="experience-timeline">
@@ -244,6 +215,13 @@ export function Content() {
                 Automated candidate stage tracking and document handling across 20+ corporate clients, saving 15+ hours of manual paperwork each week.
               </li>
             </ul>
+            {sforceRepositoryUrl && (
+              <div className="project-links">
+                <a className="code-link" href={sforceRepositoryUrl} target="_blank" rel="noopener noreferrer">
+                  GitHub repository ↗
+                </a>
+              </div>
+            )}
           </article>
 
           {/* K.M. Soft */}
