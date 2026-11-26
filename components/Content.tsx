@@ -132,7 +132,7 @@ export function Content() {
         <div id="humber" tabIndex={-1} style={{ position: 'relative', top: '-1rem' }} />
         <div id="btech" tabIndex={-1} style={{ position: 'relative', top: '-1rem' }} />
 
-        <h2>Things I have built and can show you</h2>
+        <h2>Things I have built</h2>
         <p className="lede">
           Every project below is real code you can test and inspect. Filter by category or jump directly to live deployments and GitHub repositories.
         </p>
