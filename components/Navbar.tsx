@@ -43,7 +43,7 @@ export function Navbar() {
             rel="noopener noreferrer"
             className="navbar__link navbar__link--resume"
           >
-            Résumé ↗
+            Resume ↗
           </a>
           <a href="/#contact" className="navbar__cta">
             Hire Me
